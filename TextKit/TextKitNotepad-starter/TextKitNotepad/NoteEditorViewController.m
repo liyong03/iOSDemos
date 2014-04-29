@@ -23,8 +23,17 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(preferredContentSizeChanged:)
+                                                 name:UIContentSizeCategoryDidChangeNotification
+                                               object:nil];
+    
     self.textView.text = self.note.contents;
     self.textView.delegate = self;
+    self.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+}
+
+- (void)preferredContentSizeChanged:(NSNotification*)notification {
     self.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
