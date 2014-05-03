@@ -25,6 +25,7 @@
 		72DDD5311771B395009BA334 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DDD5301771B395009BA334 /* Note.m */; };
 		72DDD5341771B6B7009BA334 /* NoteEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DDD5331771B6B7009BA334 /* NoteEditorViewController.m */; };
 		72ECAE8C1773A2A5001F1251 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72ECAE8B1773A2A5001F1251 /* CoreText.framework */; };
+		DFD3B7F719148D8800373DA7 /* SyntaxHighlightTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD3B7F619148D8800373DA7 /* SyntaxHighlightTextStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		72DDD5321771B6B7009BA334 /* NoteEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEditorViewController.h; sourceTree = "<group>"; };
 		72DDD5331771B6B7009BA334 /* NoteEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEditorViewController.m; sourceTree = "<group>"; };
 		72ECAE8B1773A2A5001F1251 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		DFD3B7F519148D8800373DA7 /* SyntaxHighlightTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyntaxHighlightTextStorage.h; sourceTree = "<group>"; };
+		DFD3B7F619148D8800373DA7 /* SyntaxHighlightTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyntaxHighlightTextStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				72DDD5301771B395009BA334 /* Note.m */,
 				72DDD5321771B6B7009BA334 /* NoteEditorViewController.h */,
 				72DDD5331771B6B7009BA334 /* NoteEditorViewController.m */,
+				DFD3B7F519148D8800373DA7 /* SyntaxHighlightTextStorage.h */,
+				DFD3B7F619148D8800373DA7 /* SyntaxHighlightTextStorage.m */,
 			);
 			path = TextKitNotepad;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				72DDD5311771B395009BA334 /* Note.m in Sources */,
 				72DDD50817719E03009BA334 /* AppDelegate.m in Sources */,
 				72DDD5341771B6B7009BA334 /* NoteEditorViewController.m in Sources */,
+				DFD3B7F719148D8800373DA7 /* SyntaxHighlightTextStorage.m in Sources */,
 				722C4581177C501100F1DDA2 /* TimeIndicatorView.m in Sources */,
 				72DDD52E1771A156009BA334 /* NotesListViewController.m in Sources */,
 				72DDD50417719E03009BA334 /* main.m in Sources */,
