@@ -60,6 +60,47 @@
      error:^(NSError *error) {
          NSLog(@"error : %@", error);
      }];
+    
+    [self testMerge];
+}
+
+- (void)testMerge {
+    RACSignal* sig1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            for (int i=0; i<100; i++) {
+                [NSThread sleepForTimeInterval:0.1];
+                NSLog(@"1 : %d", i);
+                [subscriber sendNext:@(i)];
+            }
+            [subscriber sendCompleted];
+        });
+        
+        return nil;
+    }];
+    
+    
+    RACSignal* sig2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            for (int i=0; i<100; i++) {
+                [NSThread sleepForTimeInterval:0.15];
+                NSLog(@"2 : %d", i);
+                [subscriber sendNext:@(i)];
+            }
+            [subscriber sendCompleted];
+        });
+        
+        return nil;
+    }];
+    
+    [[[RACSignal merge:@[sig1, sig2]]
+      doNext:^(NSNumber* x) {
+          NSLog(@"--- %@", x);
+      }]
+     subscribeCompleted:^{
+        NSLog(@"============= DONE =============");
+    }];
 }
 
 - (void)didReceiveMemoryWarning
