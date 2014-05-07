@@ -17,7 +17,7 @@
 		DFD3B8111915EAFB00373DA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD3B8101915EAFB00373DA7 /* main.m */; };
 		DFD3B8151915EAFB00373DA7 /* YLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD3B8141915EAFB00373DA7 /* YLAppDelegate.m */; };
 		DFD3B8181915EAFB00373DA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFD3B8161915EAFB00373DA7 /* Main.storyboard */; };
-		DFD3B81B1915EAFB00373DA7 /* YLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFD3B81A1915EAFB00373DA7 /* YLViewController.mm */; };
+		DFD3B81B1915EAFB00373DA7 /* YLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD3B81A1915EAFB00373DA7 /* YLViewController.m */; };
 		DFD3B81D1915EAFB00373DA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFD3B81C1915EAFB00373DA7 /* Images.xcassets */; };
 		DFD3B8241915EAFB00373DA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8231915EAFB00373DA7 /* XCTest.framework */; };
 		DFD3B8251915EAFC00373DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8041915EAFB00373DA7 /* Foundation.framework */; };
@@ -55,6 +55,13 @@
 			remoteGlobalIDString = EC7E319918C93D6500B38170;
 			remoteInfo = "pop-tests-osx";
 		};
+		DFBBC9F71917C5B900BC525E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EC191217162FB53A00E0CC76;
+			remoteInfo = pop;
+		};
 		DFD3B8271915EAFC00373DA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DFD3B7F91915EAFB00373DA7 /* Project object */;
@@ -77,7 +84,7 @@
 		DFD3B8141915EAFB00373DA7 /* YLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAppDelegate.m; sourceTree = "<group>"; };
 		DFD3B8171915EAFB00373DA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFD3B8191915EAFB00373DA7 /* YLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLViewController.h; sourceTree = "<group>"; };
-		DFD3B81A1915EAFB00373DA7 /* YLViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YLViewController.mm; sourceTree = "<group>"; };
+		DFD3B81A1915EAFB00373DA7 /* YLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLViewController.m; sourceTree = "<group>"; };
 		DFD3B81C1915EAFB00373DA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFD3B8221915EAFB00373DA7 /* PopDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD3B8231915EAFB00373DA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -165,7 +172,7 @@
 				DFD3B8141915EAFB00373DA7 /* YLAppDelegate.m */,
 				DFD3B8161915EAFB00373DA7 /* Main.storyboard */,
 				DFD3B8191915EAFB00373DA7 /* YLViewController.h */,
-				DFD3B81A1915EAFB00373DA7 /* YLViewController.mm */,
+				DFD3B81A1915EAFB00373DA7 /* YLViewController.m */,
 				DFD3B81C1915EAFB00373DA7 /* Images.xcassets */,
 				DFD3B80B1915EAFB00373DA7 /* Supporting Files */,
 			);
@@ -215,6 +222,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DFBBC9F81917C5B900BC525E /* PBXTargetDependency */,
 			);
 			name = PopDemo;
 			productName = PopDemo;
@@ -337,7 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD3B8111915EAFB00373DA7 /* main.m in Sources */,
-				DFD3B81B1915EAFB00373DA7 /* YLViewController.mm in Sources */,
+				DFD3B81B1915EAFB00373DA7 /* YLViewController.m in Sources */,
 				DFD3B8151915EAFB00373DA7 /* YLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +361,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DFBBC9F81917C5B900BC525E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = pop;
+			targetProxy = DFBBC9F71917C5B900BC525E /* PBXContainerItemProxy */;
+		};
 		DFD3B8281915EAFC00373DA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFD3B8001915EAFB00373DA7 /* PopDemo */;
