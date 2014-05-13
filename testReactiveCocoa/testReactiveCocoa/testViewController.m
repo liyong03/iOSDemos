@@ -41,6 +41,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSString *path = [self pathForResumeData];
+    _resumeData = [NSData dataWithContentsOfFile:path];
+    
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, 320, 240)];
     _imageView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_imageView];
@@ -91,6 +94,13 @@
     [btn2 addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
     
+}
+
+- (NSString*)pathForResumeData {
+    
+    NSString *documentdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [documentdir stringByAppendingPathComponent:@"data.resume"];
+    return path;
 }
 
 - (void)testMerge {
@@ -188,7 +198,7 @@
 }
 
 - (void)downloadBigFile:(UIButton*)btn {
-    if(!_downloadTask ) {
+    if(!_resumeData ) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/MobileHIG.pdf"]];
         AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
         NSProgress *progress;
@@ -203,6 +213,7 @@
         [session setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
             float progress = (float)totalBytesWritten/(float)totalBytesExpectedToWrite;
             NSLog(@"p = %f", progress);
+            self.progress = progress;
         }];
     } else {
         AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
@@ -218,6 +229,7 @@
         [session setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
             float progress = (float)totalBytesWritten/(float)totalBytesExpectedToWrite;
             NSLog(@"p = %f", progress);
+            self.progress = progress;
         }];
     }
 }
@@ -226,6 +238,8 @@
     if (_downloadTask) {
         [_downloadTask cancelByProducingResumeData:^(NSData *resumeData) {
             _resumeData = resumeData;
+            NSString *path = [self pathForResumeData];
+            [_resumeData writeToFile:path atomically:YES];
         }];
     }
 }
