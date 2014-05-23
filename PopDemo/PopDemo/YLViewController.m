@@ -7,8 +7,9 @@
 //
 
 #import "YLViewController.h"
-#import <POP/POPSpringAnimation.h>
+#import <pop/POPSpringAnimation.h>
 #import <pop/POPBasicAnimation.h>
+#import <pop/POPDecayAnimation.h>
 
 @interface YLViewController ()
 
@@ -45,11 +46,12 @@
         springAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
     }
     
-    
     //弹性值
     springAnimation.springBounciness = 10.0;
     //弹性速度
     springAnimation.springSpeed = 5.0;
+    
+    springAnimation.velocity = [NSValue valueWithCGSize:CGSizeMake(1, 1)];
     
     [_springView.layer pop_addAnimation:springAnimation forKey:@"changesize"];
 }

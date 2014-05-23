@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		509CC96F5FA94DF9855E0F08 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A261795D174436914BB648 /* libPods.a */; };
 		DFBBC9DE191697C700BC525E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8771915F40200373DA7 /* libc++.dylib */; };
 		DFBBC9E419169A3400BC525E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8771915F40200373DA7 /* libc++.dylib */; };
-		DFBBC9F41917C57500BC525E /* libpop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBBC9ED1917C53300BC525E /* libpop.a */; };
 		DFD3B8051915EAFB00373DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8041915EAFB00373DA7 /* Foundation.framework */; };
 		DFD3B8071915EAFB00373DA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8061915EAFB00373DA7 /* CoreGraphics.framework */; };
 		DFD3B8091915EAFB00373DA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD3B8081915EAFB00373DA7 /* UIKit.framework */; };
@@ -27,41 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DFBBC9EC1917C53300BC525E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EC191218162FB53A00E0CC76;
-			remoteInfo = pop;
-		};
-		DFBBC9EE1917C53300BC525E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EC68857F18C7B60000C6194C;
-			remoteInfo = "pop-osx";
-		};
-		DFBBC9F01917C53300BC525E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
-			remoteInfo = "pop-tests";
-		};
-		DFBBC9F21917C53300BC525E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EC7E319918C93D6500B38170;
-			remoteInfo = "pop-tests-osx";
-		};
-		DFBBC9F71917C5B900BC525E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EC191217162FB53A00E0CC76;
-			remoteInfo = pop;
-		};
 		DFD3B8271915EAFC00373DA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DFD3B7F91915EAFB00373DA7 /* Project object */;
@@ -72,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A261795D174436914BB648 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E3999259BF4F3881060206 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DFD3B8011915EAFB00373DA7 /* PopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD3B8041915EAFB00373DA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DFD3B8061915EAFB00373DA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,7 +58,6 @@
 		DFD3B82B1915EAFC00373DA7 /* PopDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopDemoTests-Info.plist"; sourceTree = "<group>"; };
 		DFD3B82D1915EAFC00373DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFD3B82F1915EAFC00373DA7 /* PopDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopDemoTests.m; sourceTree = "<group>"; };
-		DFD3B8601915EE6400373DA7 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = ../../pop/pop.xcodeproj; sourceTree = "<group>"; };
 		DFD3B8771915F40200373DA7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,11 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFBBC9F41917C57500BC525E /* libpop.a in Frameworks */,
 				DFBBC9E419169A3400BC525E /* libc++.dylib in Frameworks */,
 				DFD3B8071915EAFB00373DA7 /* CoreGraphics.framework in Frameworks */,
 				DFD3B8091915EAFB00373DA7 /* UIKit.framework in Frameworks */,
 				DFD3B8051915EAFB00373DA7 /* Foundation.framework in Frameworks */,
+				509CC96F5FA94DF9855E0F08 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,17 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DFBBC9E61917C53300BC525E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DFBBC9ED1917C53300BC525E /* libpop.a */,
-				DFBBC9EF1917C53300BC525E /* pop.framework */,
-				DFBBC9F11917C53300BC525E /* pop-tests.octest */,
-				DFBBC9F31917C53300BC525E /* pop-tests-osx.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		DFD3B7F81915EAFB00373DA7 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +95,7 @@
 				DFD3B8291915EAFC00373DA7 /* PopDemoTests */,
 				DFD3B8031915EAFB00373DA7 /* Frameworks */,
 				DFD3B8021915EAFB00373DA7 /* Products */,
+				D1E3999259BF4F3881060206 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,11 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				DFD3B8771915F40200373DA7 /* libc++.dylib */,
-				DFD3B8601915EE6400373DA7 /* pop.xcodeproj */,
 				DFD3B8041915EAFB00373DA7 /* Foundation.framework */,
 				DFD3B8061915EAFB00373DA7 /* CoreGraphics.framework */,
 				DFD3B8081915EAFB00373DA7 /* UIKit.framework */,
 				DFD3B8231915EAFB00373DA7 /* XCTest.framework */,
+				24A261795D174436914BB648 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,14 +171,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFD3B8331915EAFC00373DA7 /* Build configuration list for PBXNativeTarget "PopDemo" */;
 			buildPhases = (
+				B642F48EA67649E6AEE618FF /* Check Pods Manifest.lock */,
 				DFD3B7FD1915EAFB00373DA7 /* Sources */,
 				DFD3B7FE1915EAFB00373DA7 /* Frameworks */,
 				DFD3B7FF1915EAFB00373DA7 /* Resources */,
+				FA610A5476AF467984EE7DD3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DFBBC9F81917C5B900BC525E /* PBXTargetDependency */,
 			);
 			name = PopDemo;
 			productName = PopDemo;
@@ -273,12 +230,6 @@
 			mainGroup = DFD3B7F81915EAFB00373DA7;
 			productRefGroup = DFD3B8021915EAFB00373DA7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DFBBC9E61917C53300BC525E /* Products */;
-					ProjectRef = DFD3B8601915EE6400373DA7 /* pop.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DFD3B8001915EAFB00373DA7 /* PopDemo */,
@@ -286,37 +237,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DFBBC9ED1917C53300BC525E /* libpop.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libpop.a;
-			remoteRef = DFBBC9EC1917C53300BC525E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DFBBC9EF1917C53300BC525E /* pop.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = pop.framework;
-			remoteRef = DFBBC9EE1917C53300BC525E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DFBBC9F11917C53300BC525E /* pop-tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "pop-tests.octest";
-			remoteRef = DFBBC9F01917C53300BC525E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DFBBC9F31917C53300BC525E /* pop-tests-osx.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "pop-tests-osx.octest";
-			remoteRef = DFBBC9F21917C53300BC525E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DFD3B7FF1915EAFB00373DA7 /* Resources */ = {
@@ -338,6 +258,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B642F48EA67649E6AEE618FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA610A5476AF467984EE7DD3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFD3B7FD1915EAFB00373DA7 /* Sources */ = {
@@ -361,11 +314,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DFBBC9F81917C5B900BC525E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = pop;
-			targetProxy = DFBBC9F71917C5B900BC525E /* PBXContainerItemProxy */;
-		};
 		DFD3B8281915EAFC00373DA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFD3B8001915EAFB00373DA7 /* PopDemo */;
@@ -473,6 +421,7 @@
 		};
 		DFD3B8341915EAFC00373DA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E3999259BF4F3881060206 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -482,7 +431,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/liyong03/Dev/github/pop/,
 				);
 				INFOPLIST_FILE = "PopDemo/PopDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -495,6 +443,7 @@
 		};
 		DFD3B8351915EAFC00373DA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E3999259BF4F3881060206 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -504,7 +453,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/liyong03/Dev/github/pop/,
 				);
 				INFOPLIST_FILE = "PopDemo/PopDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;

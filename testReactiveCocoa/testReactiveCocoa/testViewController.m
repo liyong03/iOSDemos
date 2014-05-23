@@ -74,7 +74,7 @@
          NSLog(@"error : %@", error);
      }];
     
-    //[self testMerge];
+    [self testMerge];
     
     
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
