@@ -46,6 +46,7 @@
         springAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
     }
     
+    //springAnimation.duration = 0.8f;
     //弹性值
     springAnimation.springBounciness = 10.0;
     //弹性速度
