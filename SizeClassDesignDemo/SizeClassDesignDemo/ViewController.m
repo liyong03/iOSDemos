@@ -25,4 +25,7 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clicked:(id)sender {
+  NSLog(@"clicked");
+}
 @end

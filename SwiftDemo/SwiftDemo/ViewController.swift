@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var downloadTask:NSURLSessionDownloadTask? = nil
+    @IBOutlet var imageView: UIImageView? = nil;
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ class ViewController: UIViewController {
         var myrequest = NSURLRequest(URL: NSURL.URLWithString("http://cdn1.raywenderlich.com/wp-content/uploads/2013/09/networking7.png"))
         
         func handler(url : NSURL!, reponse: NSURLResponse!, error : NSError!) -> Void {
-            println("url:\(url)\n response:\(reponse)\n error: \(error)")
+            var img:UIImage? = UIImage(data: NSData(contentsOfURL: url))
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageView!.image = img
+            })
         }
         
         self.downloadTask = session.downloadTaskWithRequest(myrequest, completionHandler: handler)

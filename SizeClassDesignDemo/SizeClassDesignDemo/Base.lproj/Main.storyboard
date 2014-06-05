@@ -38,13 +38,14 @@
                                         <include reference="vnA-nx-w2B"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hrr-r1-dNE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N3g-R2-t6f" firstAttribute="top" secondItem="aY4-NN-KEU" secondAttribute="bottom" constant="200" id="asK-R2-dy4">
-                                <variation key="heightClass=compact-widthClass=compact"/>
-                            </constraint>
+                            <constraint firstItem="N3g-R2-t6f" firstAttribute="top" secondItem="aY4-NN-KEU" secondAttribute="bottom" constant="200" id="asK-R2-dy4"/>
                             <constraint firstAttribute="centerX" secondItem="N3g-R2-t6f" secondAttribute="centerX" id="pw2-88-Jz8"/>
                             <constraint firstItem="N3g-R2-t6f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="sTX-Vi-AKi"/>
                             <constraint firstItem="N3g-R2-t6f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="yRf-FC-Eko"/>
