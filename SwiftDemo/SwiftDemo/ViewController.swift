@@ -30,14 +30,21 @@ class ViewController: UIViewController {
         var session = NSURLSession.sharedSession()
         var myrequest = NSURLRequest(URL: NSURL.URLWithString("http://cdn1.raywenderlich.com/wp-content/uploads/2013/09/networking7.png"))
         
-        func handler(url : NSURL!, reponse: NSURLResponse!, error : NSError!) -> Void {
+//        func handler(url : NSURL!, reponse: NSURLResponse!, error : NSError!) -> Void {
+//            var img:UIImage? = UIImage(data: NSData(contentsOfURL: url))
+//            dispatch_async(dispatch_get_main_queue(), {
+//                self.imageView!.image = img
+//            })
+//        }
+        
+        // Here we use trailing closures to put the closures out side of the parameters list
+        self.downloadTask = session.downloadTaskWithRequest(myrequest) {
+            (url : NSURL!, reponse: NSURLResponse!, error : NSError!) -> Void in
             var img:UIImage? = UIImage(data: NSData(contentsOfURL: url))
             dispatch_async(dispatch_get_main_queue(), {
                 self.imageView!.image = img
-            })
+                })
         }
-        
-        self.downloadTask = session.downloadTaskWithRequest(myrequest, completionHandler: handler)
         self.downloadTask!.resume()
         println("task: \(self.downloadTask)")
     }
