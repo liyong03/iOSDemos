@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiv-Kl-kSE">
-                                <rect key="frame" x="73" y="61" width="46" height="30"/>
+                                <rect key="frame" x="53" y="28" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,20 +25,31 @@
                                     <action selector="clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bU-dk-ddV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-Aj-ibq">
-                                <rect key="frame" x="120" y="284" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-Aj-ibq" customClass="YLImageView" customModule="SwiftDemo" customModuleProvider="target">
+                                <rect key="frame" x="120" y="169" width="240" height="243"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="99o-sN-ghV"/>
-                                    <constraint firstAttribute="height" constant="128" id="SXX-AP-NrG"/>
+                                    <constraint firstAttribute="height" constant="243" id="SXX-AP-NrG"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-lg-bWJ">
+                                <rect key="frame" x="53" y="66" width="138" height="30"/>
+                                <state key="normal" title="Core Graphics Load">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAi-8I-khH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b8a-Aj-ibq" secondAttribute="bottom" constant="68" id="24a-xe-bPg"/>
-                            <constraint firstItem="oiv-Kl-kSE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="SyO-A7-kyB"/>
+                            <constraint firstItem="LXq-lg-bWJ" firstAttribute="top" secondItem="oiv-Kl-kSE" secondAttribute="bottom" constant="8" id="MbN-H2-B7s"/>
+                            <constraint firstItem="oiv-Kl-kSE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="SyO-A7-kyB"/>
                             <constraint firstAttribute="centerX" secondItem="b8a-Aj-ibq" secondAttribute="centerX" id="iTZ-8W-i2j"/>
-                            <constraint firstItem="oiv-Kl-kSE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="73" id="yQc-pB-cbA"/>
+                            <constraint firstItem="oiv-Kl-kSE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="53" id="yQc-pB-cbA"/>
+                            <constraint firstItem="LXq-lg-bWJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="53" id="zNo-A1-qfM"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>

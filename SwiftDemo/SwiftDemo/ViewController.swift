@@ -7,6 +7,20 @@
 //
 
 import UIKit
+import imageIO
+import MobileCoreServices
+
+class YLImageView : UIImageView {
+    override var image:UIImage? {
+    get {
+        return super.image
+    }
+    set {
+        super.image = newValue
+        NSLog("========= $$$$$$$$$ ======= Set image")
+    }
+    }
+}
 
 class ViewController: UIViewController {
     
@@ -48,6 +62,22 @@ class ViewController: UIViewController {
         self.downloadTask!.resume()
         println("task: \(self.downloadTask)")
     }
-
+    
+    @IBAction func loadImage(sender : AnyObject) {
+        let path = NSBundle.mainBundle().URLForResource("logo", withExtension: "jpg")
+        let data = NSData(contentsOfURL: path)
+        // parse image from data using UIImage
+        //let img = UIImage(data: data)
+        
+        // or we can use core graphics
+        var cgimgsource = CGImageSourceCreateWithData(data, nil).takeRetainedValue()
+        
+        var imgCount = CGImageSourceGetCount(cgimgsource)
+        var isGIF = UTTypeConformsTo(CGImageSourceGetType(cgimgsource).takeUnretainedValue(), kUTTypeGIF)
+        var cgimg = CGImageSourceCreateImageAtIndex(cgimgsource, 0, nil).takeUnretainedValue()
+        var img = UIImage(CGImage: cgimg)
+        self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+        self.imageView!.image = img
+    }
 }
 
