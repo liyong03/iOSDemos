@@ -10,7 +10,7 @@ import UIKit
 import imageIO
 import MobileCoreServices
 
-class YLImageView : UIImageView {
+class YLImageViewTTT : UIImageView {
     override var image:UIImage? {
     get {
         return super.image
@@ -64,20 +64,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loadImage(sender : AnyObject) {
-        let path = NSBundle.mainBundle().URLForResource("logo", withExtension: "jpg")
+        let path = NSBundle.mainBundle().URLForResource("iwatch", withExtension: "gif")
         let data = NSData(contentsOfURL: path)
-        // parse image from data using UIImage
-        //let img = UIImage(data: data)
+//        // parse image from data using UIImage
+//        //let img = UIImage(data: data)
+//        
+//        // or we can use core graphics
+////        var cgimgsource = CGImageSourceCreateWithData(data, nil).takeRetainedValue()
+////
+////        var imgCount = CGImageSourceGetCount(cgimgsource)
+////        var isGIF = UTTypeConformsTo(CGImageSourceGetType(cgimgsource).takeUnretainedValue(), kUTTypeGIF)
+////        var cgimg = CGImageSourceCreateImageAtIndex(cgimgsource, 0, nil).takeUnretainedValue()
+////        var img = UIImage(CGImage: cgimg)
+////        self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+////        self.imageView!.image = img
+//        
+//        var gitImage = YLGIFImage(data: data, scale: 1.0)
         
-        // or we can use core graphics
-        var cgimgsource = CGImageSourceCreateWithData(data, nil).takeRetainedValue()
-        
-        var imgCount = CGImageSourceGetCount(cgimgsource)
-        var isGIF = UTTypeConformsTo(CGImageSourceGetType(cgimgsource).takeUnretainedValue(), kUTTypeGIF)
-        var cgimg = CGImageSourceCreateImageAtIndex(cgimgsource, 0, nil).takeUnretainedValue()
-        var img = UIImage(CGImage: cgimg)
-        self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
-        self.imageView!.image = img
+        var gifImage = YLGIFImage(contentsOfFile: path.absoluteString)
+        //var animatedImg = UIImage.animatedImageWithImages(gifImage.frameImages, duration: gifImage.totalDuration)
+        self.imageView!.image = gifImage
     }
 }
 

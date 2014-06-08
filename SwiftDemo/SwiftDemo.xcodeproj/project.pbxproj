@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E31C87A1944071F001E7BCB /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E31C8791944071F001E7BCB /* YLGIFImage.swift */; };
+		4E31C87B1944071F001E7BCB /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E31C8791944071F001E7BCB /* YLGIFImage.swift */; };
 		4E6642E9193FF6C700139322 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E6642E8193FF6C700139322 /* logo.jpg */; };
+		4E8046AC19441AAB007EFB50 /* iwatch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4E8046AB19441AAB007EFB50 /* iwatch.gif */; };
+		4E8046AD19441AAB007EFB50 /* iwatch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4E8046AB19441AAB007EFB50 /* iwatch.gif */; };
+		4E8046AF19446159007EFB50 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8046AE19446159007EFB50 /* YLImageView.swift */; };
+		4E8046B019446159007EFB50 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8046AE19446159007EFB50 /* YLImageView.swift */; };
 		4E98EB70193DE56F003637CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98EB6F193DE56F003637CC /* AppDelegate.swift */; };
 		4E98EB72193DE56F003637CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98EB71193DE56F003637CC /* ViewController.swift */; };
 		4E98EB75193DE56F003637CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E98EB73193DE56F003637CC /* Main.storyboard */; };
@@ -26,7 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E31C8791944071F001E7BCB /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLGIFImage.swift; sourceTree = "<group>"; };
 		4E6642E8193FF6C700139322 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		4E8046AB19441AAB007EFB50 /* iwatch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iwatch.gif; sourceTree = "<group>"; };
+		4E8046AE19446159007EFB50 /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLImageView.swift; sourceTree = "<group>"; };
 		4E98EB6A193DE56F003637CC /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E98EB6E193DE56F003637CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E98EB6F193DE56F003637CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +88,10 @@
 			children = (
 				4E98EB6F193DE56F003637CC /* AppDelegate.swift */,
 				4E98EB71193DE56F003637CC /* ViewController.swift */,
+				4E31C8791944071F001E7BCB /* YLGIFImage.swift */,
+				4E8046AE19446159007EFB50 /* YLImageView.swift */,
 				4E6642E8193FF6C700139322 /* logo.jpg */,
+				4E8046AB19441AAB007EFB50 /* iwatch.gif */,
 				4E98EB73193DE56F003637CC /* Main.storyboard */,
 				4E98EB76193DE56F003637CC /* Images.xcassets */,
 				4E98EB6D193DE56F003637CC /* Supporting Files */,
@@ -194,6 +206,7 @@
 			files = (
 				4E98EB75193DE56F003637CC /* Main.storyboard in Resources */,
 				4E6642E9193FF6C700139322 /* logo.jpg in Resources */,
+				4E8046AC19441AAB007EFB50 /* iwatch.gif in Resources */,
 				4E98EB77193DE56F003637CC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8046AD19441AAB007EFB50 /* iwatch.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E98EB72193DE56F003637CC /* ViewController.swift in Sources */,
+				4E31C87A1944071F001E7BCB /* YLGIFImage.swift in Sources */,
 				4E98EB70193DE56F003637CC /* AppDelegate.swift in Sources */,
+				4E8046AF19446159007EFB50 /* YLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8046B019446159007EFB50 /* YLImageView.swift in Sources */,
 				4E98EB83193DE56F003637CC /* SwiftDemoTests.swift in Sources */,
+				4E31C87B1944071F001E7BCB /* YLGIFImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

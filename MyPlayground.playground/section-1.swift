@@ -17,7 +17,7 @@ enum Thing {
     case bike
 }
 
-var t:Thing = .house("汗血宝马")
+let t:Thing = .house("汗血宝马")
 
 switch t {
 case let .house(h):
@@ -30,3 +30,28 @@ default:
 
 var arry = [1,2,3]
 arry += 4
+
+var a = 1;
+a += Int(2.0)
+
+let c = "a"
+var names = ["yongli", "jingyan", "2"]
+names += "3"
+var dic2:Dictionary<String, Int> = ["sfsdf" : 2, "sdfsdf" : 3]
+let v = dic2["sfsdf"]!
+let v2 = 2
+var num: Int? = nil
+num = 3
+
+if let _v = dic2["sfsdf"] {
+  println("have \(_v)")
+} else {
+  println("not have")
+}
+
+func saySth() -> String? {
+  return "顺利发送旅客短斤少两"
+}
+
+let sss = saySth()
+
