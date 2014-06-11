@@ -55,3 +55,7 @@ func saySth() -> String? {
 
 let sss = saySth()
 
+var range = Range(start: 0,end: 10)
+for i in range {
+    println("\(i)")
+}
