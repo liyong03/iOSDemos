@@ -63,19 +63,19 @@
         _progressView.progress = number.floatValue;
     }];
     
-    @weakify(self);
-    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
-      deliverOn:[RACScheduler mainThreadScheduler]]
-     subscribeNext:^(UIImage* image) {
-         @strongify(self);
-         self.imageView.image = image;
-     }
-     error:^(NSError *error) {
-         NSLog(@"error : %@", error);
-     }];
+//    @weakify(self);
+//    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
+//      deliverOn:[RACScheduler mainThreadScheduler]]
+//     subscribeNext:^(UIImage* image) {
+//         @strongify(self);
+//         self.imageView.image = image;
+//     }
+//     error:^(NSError *error) {
+//         NSLog(@"error : %@", error);
+//     }];
     
-    [self testMerge];
-    
+    //[self testMerge];
+    [self testConcat];
     
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 400, 320, 40);
@@ -242,6 +242,46 @@
             [_resumeData writeToFile:path atomically:YES];
         }];
     }
+}
+
+- (void)testConcat {
+	RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            for (int i=0; i<10; i++) {
+                [NSThread sleepForTimeInterval:0.15];
+                NSLog(@"*** : %d", i);
+                [subscriber sendNext:@(i)];
+            }
+            
+            RACSignal* nextPageSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                
+                for (int i=0; i<10; i++) {
+                    [NSThread sleepForTimeInterval:0.15];
+                    NSLog(@"^^^ : %d", i);
+                    [subscriber sendNext:@(i)];
+                }
+                [subscriber sendCompleted];
+                return nil;
+            }];
+            
+			[[[RACSignal
+               return:@(100)]
+              concat:nextPageSignal]
+             subscribe:subscriber];
+            
+            //[subscriber sendCompleted];
+        });
+        
+        return nil;
+	}];
+    
+    [signal subscribeNext:^(NSNumber* x) {
+        NSLog(@"=== %@", x);
+    }];
+//    [[signal concat] subscribeNext:^(NSNumber* x) {
+//        NSLog(@">>> %@", x);
+//    }];
 }
 
 @end
