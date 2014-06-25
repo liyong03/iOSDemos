@@ -63,16 +63,16 @@
         _progressView.progress = number.floatValue;
     }];
     
-//    @weakify(self);
-//    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
-//      deliverOn:[RACScheduler mainThreadScheduler]]
-//     subscribeNext:^(UIImage* image) {
-//         @strongify(self);
-//         self.imageView.image = image;
-//     }
-//     error:^(NSError *error) {
-//         NSLog(@"error : %@", error);
-//     }];
+    @weakify(self);
+    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
+      deliverOn:[RACScheduler mainThreadScheduler]]
+     subscribeNext:^(UIImage* image) {
+         @strongify(self);
+         self.imageView.image = image;
+     }
+     error:^(NSError *error) {
+         NSLog(@"error : %@", error);
+     }];
     
     //[self testMerge];
     [self testConcat];
@@ -94,6 +94,39 @@
     [btn2 addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
     
+    UIButton* btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn3.frame = CGRectMake(0, 500, 320, 40);
+    [btn3 setTitle:@"Test switch to latest" forState:UIControlStateNormal];
+    [btn3 setTintColor:[UIColor redColor]];
+    [btn3 setBackgroundColor:[UIColor greenColor]];
+    [btn3 addTarget:self action:@selector(testSwitchToLatest) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn3];
+    
+}
+
+- (void)testSwitchToLatest {
+    RACSubject *letters = [RACSubject subject];
+    RACSubject *numbers = [RACSubject subject];
+    RACSubject *signalOfSignals = [RACSubject subject];
+    
+    RACSignal *switched = [signalOfSignals switchToLatest];
+    
+    // Outputs: A B 1 D
+    [switched subscribeNext:^(NSString *x) {
+        NSLog(@"%@", x);
+    }];
+    
+    [signalOfSignals sendNext:letters];
+    [letters sendNext:@"A"];
+    [letters sendNext:@"B"];
+    
+    [signalOfSignals sendNext:numbers];
+    [letters sendNext:@"C"];
+    [numbers sendNext:@"1"];
+    
+    [signalOfSignals sendNext:letters];
+    [numbers sendNext:@"2"];
+    [letters sendNext:@"D"];
 }
 
 - (NSString*)pathForResumeData {
