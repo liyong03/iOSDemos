@@ -29,6 +29,8 @@
 		4E1BC57319669CF500E9AD78 /* TpldKhangXiDictTrial.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1BC57119669CF500E9AD78 /* TpldKhangXiDictTrial.otf */; };
 		4EFDA0CE1966EFAC00816AB4 /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFDA0CD1966EFAC00816AB4 /* FontTableViewController.m */; };
 		4EFDA0CF1966EFAC00816AB4 /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFDA0CD1966EFAC00816AB4 /* FontTableViewController.m */; };
+		4EFE61B81967ADDF00022C83 /* 方正清刻本悦宋简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EFE61B71967ADDF00022C83 /* 方正清刻本悦宋简体.ttf */; };
+		4EFE61B91967ADDF00022C83 /* 方正清刻本悦宋简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EFE61B71967ADDF00022C83 /* 方正清刻本悦宋简体.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		4E1BC57119669CF500E9AD78 /* TpldKhangXiDictTrial.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TpldKhangXiDictTrial.otf; sourceTree = "<group>"; };
 		4EFDA0CC1966EFAC00816AB4 /* FontTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewController.h; sourceTree = "<group>"; };
 		4EFDA0CD1966EFAC00816AB4 /* FontTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewController.m; sourceTree = "<group>"; };
+		4EFE61B71967ADDF00022C83 /* 方正清刻本悦宋简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正清刻本悦宋简体.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,7 @@
 				4EFDA0CD1966EFAC00816AB4 /* FontTableViewController.m */,
 				4E1BC56819668BEB00E9AD78 /* song.ttf */,
 				4E1BC56B19668F7500E9AD78 /* 方正粗黑宋繁体.ttf */,
+				4EFE61B71967ADDF00022C83 /* 方正清刻本悦宋简体.ttf */,
 				4E1BC57119669CF500E9AD78 /* TpldKhangXiDictTrial.otf */,
 				4E1BC54719667FDB00E9AD78 /* Images.xcassets */,
 				4E1BC53619667FDB00E9AD78 /* Supporting Files */,
@@ -253,6 +257,7 @@
 				4E1BC57219669CF500E9AD78 /* TpldKhangXiDictTrial.otf in Resources */,
 				4E1BC56919668BEB00E9AD78 /* song.ttf in Resources */,
 				4E1BC54819667FDB00E9AD78 /* Images.xcassets in Resources */,
+				4EFE61B81967ADDF00022C83 /* 方正清刻本悦宋简体.ttf in Resources */,
 				4E1BC53A19667FDB00E9AD78 /* InfoPlist.strings in Resources */,
 				4E1BC54319667FDB00E9AD78 /* Main.storyboard in Resources */,
 			);
@@ -264,6 +269,7 @@
 			files = (
 				4E1BC56A19668BEB00E9AD78 /* song.ttf in Resources */,
 				4E1BC57319669CF500E9AD78 /* TpldKhangXiDictTrial.otf in Resources */,
+				4EFE61B91967ADDF00022C83 /* 方正清刻本悦宋简体.ttf in Resources */,
 				4E1BC55919667FDB00E9AD78 /* InfoPlist.strings in Resources */,
 				4E1BC56D19668F7500E9AD78 /* 方正粗黑宋繁体.ttf in Resources */,
 			);
