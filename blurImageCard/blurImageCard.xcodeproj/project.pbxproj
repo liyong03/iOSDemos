@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EED18BD196D83B900DA9066 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18BC196D83B900DA9066 /* Foundation.framework */; };
+		4EED18BF196D83B900DA9066 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18BE196D83B900DA9066 /* CoreGraphics.framework */; };
+		4EED18C1196D83B900DA9066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18C0196D83B900DA9066 /* UIKit.framework */; };
+		4EED18C7196D83B900DA9066 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18C5196D83B900DA9066 /* InfoPlist.strings */; };
+		4EED18C9196D83B900DA9066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED18C8196D83B900DA9066 /* main.m */; };
+		4EED18CD196D83B900DA9066 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED18CC196D83B900DA9066 /* AppDelegate.m */; };
+		4EED18D0196D83B900DA9066 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18CE196D83B900DA9066 /* Main_iPhone.storyboard */; };
+		4EED18D3196D83B900DA9066 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18D1196D83B900DA9066 /* Main_iPad.storyboard */; };
+		4EED18D6196D83B900DA9066 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED18D5196D83B900DA9066 /* ViewController.m */; };
+		4EED18D8196D83B900DA9066 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18D7196D83B900DA9066 /* Images.xcassets */; };
+		4EED18DF196D83B900DA9066 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18DE196D83B900DA9066 /* XCTest.framework */; };
+		4EED18E0196D83B900DA9066 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18BC196D83B900DA9066 /* Foundation.framework */; };
+		4EED18E1196D83B900DA9066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EED18C0196D83B900DA9066 /* UIKit.framework */; };
+		4EED18E9196D83B900DA9066 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18E7196D83B900DA9066 /* InfoPlist.strings */; };
+		4EED18EB196D83B900DA9066 /* blurImageCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED18EA196D83B900DA9066 /* blurImageCardTests.m */; };
+		4EED18F6196D83D500DA9066 /* BlurImageCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED18F5196D83D500DA9066 /* BlurImageCard.m */; };
+		4EED18F8196D87DC00DA9066 /* Demo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18F7196D87DC00DA9066 /* Demo.jpeg */; };
+		4EED18F9196D87DC00DA9066 /* Demo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18F7196D87DC00DA9066 /* Demo.jpeg */; };
+		4EED18FB196D8B3700DA9066 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18FA196D8B3700DA9066 /* test.jpg */; };
+		4EED18FC196D8B3700DA9066 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EED18FA196D8B3700DA9066 /* test.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4EED18E2196D83B900DA9066 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EED18B1196D83B900DA9066 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EED18B8196D83B900DA9066;
+			remoteInfo = blurImageCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4EED18B9196D83B900DA9066 /* blurImageCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blurImageCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EED18BC196D83B900DA9066 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4EED18BE196D83B900DA9066 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4EED18C0196D83B900DA9066 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4EED18C4196D83B900DA9066 /* blurImageCard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "blurImageCard-Info.plist"; sourceTree = "<group>"; };
+		4EED18C6196D83B900DA9066 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4EED18C8196D83B900DA9066 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4EED18CA196D83B900DA9066 /* blurImageCard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blurImageCard-Prefix.pch"; sourceTree = "<group>"; };
+		4EED18CB196D83B900DA9066 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4EED18CC196D83B900DA9066 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4EED18CF196D83B900DA9066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4EED18D2196D83B900DA9066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4EED18D4196D83B900DA9066 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4EED18D5196D83B900DA9066 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4EED18D7196D83B900DA9066 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4EED18DD196D83B900DA9066 /* blurImageCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blurImageCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EED18DE196D83B900DA9066 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4EED18E6196D83B900DA9066 /* blurImageCardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "blurImageCardTests-Info.plist"; sourceTree = "<group>"; };
+		4EED18E8196D83B900DA9066 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4EED18EA196D83B900DA9066 /* blurImageCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blurImageCardTests.m; sourceTree = "<group>"; };
+		4EED18F4196D83D500DA9066 /* BlurImageCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurImageCard.h; sourceTree = "<group>"; };
+		4EED18F5196D83D500DA9066 /* BlurImageCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurImageCard.m; sourceTree = "<group>"; };
+		4EED18F7196D87DC00DA9066 /* Demo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Demo.jpeg; sourceTree = "<group>"; };
+		4EED18FA196D8B3700DA9066 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EED18B6196D83B900DA9066 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18BF196D83B900DA9066 /* CoreGraphics.framework in Frameworks */,
+				4EED18C1196D83B900DA9066 /* UIKit.framework in Frameworks */,
+				4EED18BD196D83B900DA9066 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EED18DA196D83B900DA9066 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18DF196D83B900DA9066 /* XCTest.framework in Frameworks */,
+				4EED18E1196D83B900DA9066 /* UIKit.framework in Frameworks */,
+				4EED18E0196D83B900DA9066 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EED18B0196D83B900DA9066 = {
+			isa = PBXGroup;
+			children = (
+				4EED18C2196D83B900DA9066 /* blurImageCard */,
+				4EED18E4196D83B900DA9066 /* blurImageCardTests */,
+				4EED18BB196D83B900DA9066 /* Frameworks */,
+				4EED18BA196D83B900DA9066 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4EED18BA196D83B900DA9066 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18B9196D83B900DA9066 /* blurImageCard.app */,
+				4EED18DD196D83B900DA9066 /* blurImageCardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EED18BB196D83B900DA9066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18BC196D83B900DA9066 /* Foundation.framework */,
+				4EED18BE196D83B900DA9066 /* CoreGraphics.framework */,
+				4EED18C0196D83B900DA9066 /* UIKit.framework */,
+				4EED18DE196D83B900DA9066 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EED18C2196D83B900DA9066 /* blurImageCard */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18CB196D83B900DA9066 /* AppDelegate.h */,
+				4EED18CC196D83B900DA9066 /* AppDelegate.m */,
+				4EED18CE196D83B900DA9066 /* Main_iPhone.storyboard */,
+				4EED18D1196D83B900DA9066 /* Main_iPad.storyboard */,
+				4EED18D4196D83B900DA9066 /* ViewController.h */,
+				4EED18D5196D83B900DA9066 /* ViewController.m */,
+				4EED18D7196D83B900DA9066 /* Images.xcassets */,
+				4EED18C3196D83B900DA9066 /* Supporting Files */,
+				4EED18F4196D83D500DA9066 /* BlurImageCard.h */,
+				4EED18F5196D83D500DA9066 /* BlurImageCard.m */,
+				4EED18FA196D8B3700DA9066 /* test.jpg */,
+				4EED18F7196D87DC00DA9066 /* Demo.jpeg */,
+			);
+			path = blurImageCard;
+			sourceTree = "<group>";
+		};
+		4EED18C3196D83B900DA9066 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18C4196D83B900DA9066 /* blurImageCard-Info.plist */,
+				4EED18C5196D83B900DA9066 /* InfoPlist.strings */,
+				4EED18C8196D83B900DA9066 /* main.m */,
+				4EED18CA196D83B900DA9066 /* blurImageCard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4EED18E4196D83B900DA9066 /* blurImageCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18EA196D83B900DA9066 /* blurImageCardTests.m */,
+				4EED18E5196D83B900DA9066 /* Supporting Files */,
+			);
+			path = blurImageCardTests;
+			sourceTree = "<group>";
+		};
+		4EED18E5196D83B900DA9066 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4EED18E6196D83B900DA9066 /* blurImageCardTests-Info.plist */,
+				4EED18E7196D83B900DA9066 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EED18B8196D83B900DA9066 /* blurImageCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EED18EE196D83B900DA9066 /* Build configuration list for PBXNativeTarget "blurImageCard" */;
+			buildPhases = (
+				4EED18B5196D83B900DA9066 /* Sources */,
+				4EED18B6196D83B900DA9066 /* Frameworks */,
+				4EED18B7196D83B900DA9066 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blurImageCard;
+			productName = blurImageCard;
+			productReference = 4EED18B9196D83B900DA9066 /* blurImageCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4EED18DC196D83B900DA9066 /* blurImageCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EED18F1196D83B900DA9066 /* Build configuration list for PBXNativeTarget "blurImageCardTests" */;
+			buildPhases = (
+				4EED18D9196D83B900DA9066 /* Sources */,
+				4EED18DA196D83B900DA9066 /* Frameworks */,
+				4EED18DB196D83B900DA9066 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EED18E3196D83B900DA9066 /* PBXTargetDependency */,
+			);
+			name = blurImageCardTests;
+			productName = blurImageCardTests;
+			productReference = 4EED18DD196D83B900DA9066 /* blurImageCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EED18B1196D83B900DA9066 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Yong Li";
+				TargetAttributes = {
+					4EED18DC196D83B900DA9066 = {
+						TestTargetID = 4EED18B8196D83B900DA9066;
+					};
+				};
+			};
+			buildConfigurationList = 4EED18B4196D83B900DA9066 /* Build configuration list for PBXProject "blurImageCard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EED18B0196D83B900DA9066;
+			productRefGroup = 4EED18BA196D83B900DA9066 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EED18B8196D83B900DA9066 /* blurImageCard */,
+				4EED18DC196D83B900DA9066 /* blurImageCardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EED18B7196D83B900DA9066 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18D3196D83B900DA9066 /* Main_iPad.storyboard in Resources */,
+				4EED18FB196D8B3700DA9066 /* test.jpg in Resources */,
+				4EED18D8196D83B900DA9066 /* Images.xcassets in Resources */,
+				4EED18F8196D87DC00DA9066 /* Demo.jpeg in Resources */,
+				4EED18D0196D83B900DA9066 /* Main_iPhone.storyboard in Resources */,
+				4EED18C7196D83B900DA9066 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EED18DB196D83B900DA9066 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18E9196D83B900DA9066 /* InfoPlist.strings in Resources */,
+				4EED18FC196D8B3700DA9066 /* test.jpg in Resources */,
+				4EED18F9196D87DC00DA9066 /* Demo.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EED18B5196D83B900DA9066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18F6196D83D500DA9066 /* BlurImageCard.m in Sources */,
+				4EED18D6196D83B900DA9066 /* ViewController.m in Sources */,
+				4EED18CD196D83B900DA9066 /* AppDelegate.m in Sources */,
+				4EED18C9196D83B900DA9066 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EED18D9196D83B900DA9066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EED18EB196D83B900DA9066 /* blurImageCardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4EED18E3196D83B900DA9066 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EED18B8196D83B900DA9066 /* blurImageCard */;
+			targetProxy = 4EED18E2196D83B900DA9066 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4EED18C5196D83B900DA9066 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EED18C6196D83B900DA9066 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4EED18CE196D83B900DA9066 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EED18CF196D83B900DA9066 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4EED18D1196D83B900DA9066 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EED18D2196D83B900DA9066 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4EED18E7196D83B900DA9066 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EED18E8196D83B900DA9066 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4EED18EC196D83B900DA9066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EED18ED196D83B900DA9066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4EED18EF196D83B900DA9066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blurImageCard/blurImageCard-Prefix.pch";
+				INFOPLIST_FILE = "blurImageCard/blurImageCard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4EED18F0196D83B900DA9066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blurImageCard/blurImageCard-Prefix.pch";
+				INFOPLIST_FILE = "blurImageCard/blurImageCard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4EED18F2196D83B900DA9066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blurImageCard.app/blurImageCard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blurImageCard/blurImageCard-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "blurImageCardTests/blurImageCardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4EED18F3196D83B900DA9066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/blurImageCard.app/blurImageCard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "blurImageCard/blurImageCard-Prefix.pch";
+				INFOPLIST_FILE = "blurImageCardTests/blurImageCardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EED18B4196D83B900DA9066 /* Build configuration list for PBXProject "blurImageCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EED18EC196D83B900DA9066 /* Debug */,
+				4EED18ED196D83B900DA9066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EED18EE196D83B900DA9066 /* Build configuration list for PBXNativeTarget "blurImageCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EED18EF196D83B900DA9066 /* Debug */,
+				4EED18F0196D83B900DA9066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4EED18F1196D83B900DA9066 /* Build configuration list for PBXNativeTarget "blurImageCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EED18F2196D83B900DA9066 /* Debug */,
+				4EED18F3196D83B900DA9066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EED18B1196D83B900DA9066 /* Project object */;
+}

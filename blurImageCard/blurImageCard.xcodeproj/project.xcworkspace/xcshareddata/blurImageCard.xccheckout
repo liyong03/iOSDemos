@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>476E2359-4DD4-4018-B359-8036769C01B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>blurImageCard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4C7865CB-3BFF-4D5A-BB47-FEB9049A2EDB</key>
+		<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>blurImageCard/blurImageCard.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4C7865CB-3BFF-4D5A-BB47-FEB9049A2EDB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4C7865CB-3BFF-4D5A-BB47-FEB9049A2EDB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4C7865CB-3BFF-4D5A-BB47-FEB9049A2EDB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSDemos</string>
+		</dict>
+	</array>
+</dict>
+</plist>
