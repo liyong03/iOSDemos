@@ -15,6 +15,7 @@
 - (UIImage *) resizedImageByHeight: (NSUInteger) height;
 - (UIImage *) resizedImageWithMaximumSize: (CGSize) size;
 - (UIImage *) resizedImageWithMinimumSize: (CGSize) size;
+- (UIImage *) resizedImageWithSize: (CGSize) size;
 
 @end
 
@@ -139,6 +140,11 @@
     return [self drawImageInBounds: CGRectMake(0, 0, round(original_width * scale_ratio), round(original_height * scale_ratio))];
 }
 
+- (UIImage *) resizedImageWithSize: (CGSize) size
+{
+    return [self drawImageInBounds: CGRectMake(0, 0, round(size.width), round(size.height))];
+}
+
 - (UIImage *) drawImageInBounds: (CGRect) bounds
 {
     UIGraphicsBeginImageContext(bounds.size);
@@ -168,6 +174,7 @@
 @implementation BlurImageCard {
     UIToolbar* _topBar;
     UIToolbar* _bottomBar;
+    UIImageView* _bgColorImageView;
     UIImageView* _contentImageView;
 }
 
@@ -210,11 +217,13 @@
 - (void)setup {
     _topBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _topBar.barStyle = UIBarStyleBlack;
-    _topBar.backgroundColor = [[UIColor colorWithRed:0.3 green:0.3 blue:0.5 alpha:1.0] colorWithAlphaComponent:0.3];
+    _topBar.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     _bottomBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _bottomBar.barStyle = UIBarStyleBlack;
-    _bottomBar.backgroundColor = [[UIColor colorWithRed:0.3 green:0.3 blue:0.5 alpha:1.0] colorWithAlphaComponent:0.3];
+    _bottomBar.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     _contentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    _bgColorImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self addSubview:_bgColorImageView];
     [self addSubview:_contentImageView];
     [self addSubview:_topBar];
     [self addSubview:_bottomBar];
@@ -223,8 +232,9 @@
     _contentImageView.clipsToBounds = YES;
     self.contentMode = UIViewContentModeScaleAspectFill;
     _contentImageView.contentMode = UIViewContentModeScaleAspectFill;
-    //_contentImageView.hidden = YES;
+    _bgColorImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.clipsToBounds = YES;
+    //_contentImageView.hidden = YES;
 }
 
 - (void)layoutSubviews {
@@ -232,12 +242,15 @@
     _topBar.frame = CGRectMake(0, 0, self.bounds.size.width, 40);
     _bottomBar.frame = CGRectMake(0, self.bounds.size.height - 40, self.bounds.size.width, 40);
     _contentImageView.frame = CGRectMake(0, 40, self.bounds.size.width, self.bounds.size.height - 40 - 40);
+    _bgColorImageView.frame = _contentImageView.frame;
 }
 
 - (void)setImage:(UIImage *)image {
     UIImage* smallImg = [image resizedImageByWidth:4];
+    UIImage* pixelImg = [smallImg resizedImageWithSize:CGSizeMake(1, 1)];
     [super setImage:smallImg];
     _contentImageView.image = image;
+    _bgColorImageView.image = pixelImg;
 }
 
 - (void)setHighlightedImage:(UIImage *)highlightedImage {
