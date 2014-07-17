@@ -22,6 +22,8 @@
 		4EE20D5C19764AAC00FCF17B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE20D5A19764AAC00FCF17B /* InfoPlist.strings */; };
 		4EE20D5E19764AAC00FCF17B /* viewTapEffectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE20D5D19764AAC00FCF17B /* viewTapEffectDemoTests.m */; };
 		4EE20D691976571E00FCF17B /* TapEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE20D681976571E00FCF17B /* TapEffectView.m */; };
+		4EE20D6E197682EF00FCF17B /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE20D6B197682EF00FCF17B /* JNWSpringAnimation.m */; };
+		4EE20D6F197682EF00FCF17B /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE20D6D197682EF00FCF17B /* NSValue+JNWAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		4EE20D5D19764AAC00FCF17B /* viewTapEffectDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = viewTapEffectDemoTests.m; sourceTree = "<group>"; };
 		4EE20D671976571E00FCF17B /* TapEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapEffectView.h; sourceTree = "<group>"; };
 		4EE20D681976571E00FCF17B /* TapEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapEffectView.m; sourceTree = "<group>"; };
+		4EE20D6A197682EF00FCF17B /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
+		4EE20D6B197682EF00FCF17B /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
+		4EE20D6C197682EF00FCF17B /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
+		4EE20D6D197682EF00FCF17B /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,10 @@
 				4EE20D3919764AAC00FCF17B /* Supporting Files */,
 				4EE20D671976571E00FCF17B /* TapEffectView.h */,
 				4EE20D681976571E00FCF17B /* TapEffectView.m */,
+				4EE20D6A197682EF00FCF17B /* JNWSpringAnimation.h */,
+				4EE20D6B197682EF00FCF17B /* JNWSpringAnimation.m */,
+				4EE20D6C197682EF00FCF17B /* NSValue+JNWAdditions.h */,
+				4EE20D6D197682EF00FCF17B /* NSValue+JNWAdditions.m */,
 			);
 			path = viewTapEffectDemo;
 			sourceTree = "<group>";
@@ -254,9 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE20D6E197682EF00FCF17B /* JNWSpringAnimation.m in Sources */,
 				4EE20D4919764AAC00FCF17B /* ViewController.m in Sources */,
 				4EE20D4319764AAC00FCF17B /* AppDelegate.m in Sources */,
 				4EE20D3F19764AAC00FCF17B /* main.m in Sources */,
+				4EE20D6F197682EF00FCF17B /* NSValue+JNWAdditions.m in Sources */,
 				4EE20D691976571E00FCF17B /* TapEffectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +474,7 @@
 				4EE20D6319764AAC00FCF17B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EE20D6419764AAC00FCF17B /* Build configuration list for PBXNativeTarget "viewTapEffectDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +483,7 @@
 				4EE20D6619764AAC00FCF17B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

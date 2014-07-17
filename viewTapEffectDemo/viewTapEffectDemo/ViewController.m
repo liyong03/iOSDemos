@@ -44,6 +44,8 @@
     return self;
 }
 
+static TapEffectView* _effectView = nil;
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     NSLog(@"touched %lu!", (unsigned long)touches.count);
@@ -56,6 +58,8 @@
             [effectView showEffectWithCompletion:^{
                 [effectView removeFromSuperview];
             }];
+//            [effectView showEnlargeEffect];
+//            _effectView = effectView;
         }
     }
 }
@@ -66,6 +70,9 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     NSLog(@"End!");
+//    [_effectView dismissEnlargeEffect:^{
+//        [_effectView removeFromSuperview];
+//    }];
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
