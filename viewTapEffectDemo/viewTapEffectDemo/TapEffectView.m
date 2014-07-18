@@ -150,22 +150,22 @@
     layer.transform = CATransform3DMakeScale(2, 2, 1);
     layer.opacity = 1.0;
     _layer = layer;
-
-
+    
+    
     static float scaleTime = 0.6;
     static float disappTime = 0.1;
     CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     //    animation.delegate = self;
     animation.duration = scaleTime;
-//    animation.fromValue = @(0.01);
-//    animation.toValue = @(1);
+    //    animation.fromValue = @(0.01);
+    //    animation.toValue = @(1);
     animation.values = [self calculateKeyFramesFromeStartValue:0.01 endValue:1.0 interstitialSteps:10];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.fillMode = kCAFillModeForwards;
     animation.removedOnCompletion = NO;
     
     CABasicAnimation* disappear = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    disappear.delegate = self;
+    //    disappear.delegate = self;
     disappear.duration = disappTime;
     disappear.beginTime = scaleTime;
     disappear.fromValue = @(1);
@@ -228,8 +228,8 @@
 }
 
 - (NSMutableArray*)calculateKeyFramesFromeStartValue:(double)startValue
-                                 endValue:(double)endValue
-                        interstitialSteps:(NSUInteger)steps
+                                            endValue:(double)endValue
+                                   interstitialSteps:(NSUInteger)steps
 {
     NSUInteger count = steps + 2;
     SecondOrderResponseEvaluator* evaluator = [[SecondOrderResponseEvaluator alloc] initWithOmega:20.0 zeta:0.4];

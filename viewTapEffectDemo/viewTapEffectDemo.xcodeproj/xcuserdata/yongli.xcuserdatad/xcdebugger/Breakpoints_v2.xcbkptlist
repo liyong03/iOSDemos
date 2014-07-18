@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "viewTapEffectDemo/TapEffectView.m"
-            timestampString = "427198372.778373"
+            filePath = "viewTapEffectDemo/ShareButtonView.m"
+            timestampString = "427337169.724466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "-animationDidStop:finished:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "viewTapEffectDemo/TapEffectView.m"
-            timestampString = "427198372.778373"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "-showEnlargeEffect"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-animateToDone"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
