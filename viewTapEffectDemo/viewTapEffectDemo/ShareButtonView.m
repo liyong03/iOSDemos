@@ -41,6 +41,9 @@
     _titleLabel.text = _shareTitle;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _doneLabel = [[UILabel alloc] init];
+    _doneLabel.textAlignment = NSTextAlignmentCenter;
+    _doneLabel.text = @"done!";
+    _doneLabel.hidden = YES;
     
     [self addSubview:_iconView];
     [self addSubview:_titleLabel];
@@ -86,6 +89,62 @@
     animation.removedOnCompletion = NO;
     
     [_iconLayer addAnimation:animation forKey:@"done"];
+    
+    
+    CABasicAnimation* disappear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    disappear.duration = 0.2;
+    disappear.beginTime = 0.3;
+    disappear.fromValue = @(1);
+    disappear.toValue = @(0);
+    disappear.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    disappear.fillMode = kCAFillModeForwards;
+    disappear.removedOnCompletion = NO;
+    
+    CABasicAnimation* moveUp = [CABasicAnimation animationWithKeyPath:@"position.y"];
+    moveUp.duration = 0.2;
+    moveUp.beginTime = 0.3;
+    moveUp.fromValue = @(_titleLabel.layer.position.y);
+    moveUp.toValue = @(_titleLabel.layer.position.y-20);
+    moveUp.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    moveUp.fillMode = kCAFillModeForwards;
+    moveUp.removedOnCompletion = NO;
+    
+    CAAnimationGroup* titleAnimation = [[CAAnimationGroup alloc] init];
+    titleAnimation.animations = @[ disappear, moveUp ];
+    titleAnimation.duration = 0.5;
+    titleAnimation.delegate = self;
+    titleAnimation.fillMode = kCAFillModeForwards;
+    titleAnimation.removedOnCompletion = NO;
+    
+    [_titleLabel.layer addAnimation:titleAnimation forKey:@"moveup"];
+    
+    _doneLabel.hidden = NO;
+    _doneLabel.layer.opacity = 0;
+    CABasicAnimation* appear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    appear.duration = 0.2;
+    appear.beginTime = 0.3;
+    appear.fromValue = @(0);
+    appear.toValue = @(1);
+    appear.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    appear.fillMode = kCAFillModeForwards;
+    appear.removedOnCompletion = NO;
+    
+    CABasicAnimation* moveUp2 = [CABasicAnimation animationWithKeyPath:@"position.y"];
+    moveUp2.duration = 0.2;
+    moveUp2.beginTime = 0.3;
+    moveUp2.fromValue = @(_doneLabel.layer.position.y+20);
+    moveUp2.toValue = @(_doneLabel.layer.position.y);
+    moveUp2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    moveUp2.fillMode = kCAFillModeForwards;
+    moveUp2.removedOnCompletion = NO;
+    
+    CAAnimationGroup* doneAnimation = [[CAAnimationGroup alloc] init];
+    doneAnimation.animations = @[ appear, moveUp2 ];
+    doneAnimation.duration = 0.5;
+    doneAnimation.delegate = self;
+    doneAnimation.fillMode = kCAFillModeForwards;
+    doneAnimation.removedOnCompletion = NO;
+    [_doneLabel.layer addAnimation:doneAnimation forKey:@"doneAnimation"];
 }
 
 @end
