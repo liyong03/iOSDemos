@@ -54,14 +54,14 @@ static TapEffectView* _effectView = nil;
     for (UITouch* touch in [[touches objectEnumerator] allObjects] ) {
         if (touch) {
             CGPoint touchPoint = [touch locationInView:self];
-            TapEffectView* effectView = [[TapEffectView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+            TapEffectView* effectView = [[TapEffectView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
             effectView.center = touchPoint;
             [self addSubview:effectView];
-            [effectView showEffectWithCompletion:^{
+            [effectView showCircleEffectWithCompletion:^{
                 [effectView removeFromSuperview];
             }];
 //            [effectView showEnlargeEffect];
-//            _effectView = effectView;
+            _effectView = effectView;
         }
     }
 }
@@ -72,9 +72,9 @@ static TapEffectView* _effectView = nil;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     NSLog(@"End!");
-//    [_effectView dismissEnlargeEffect:^{
-//        [_effectView removeFromSuperview];
-//    }];
+    [_effectView dismissEnlargeEffect:^{
+        [_effectView removeFromSuperview];
+    }];
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];

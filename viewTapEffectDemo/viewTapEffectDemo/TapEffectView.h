@@ -11,5 +11,6 @@
 @interface TapEffectView : UIView
 - (void)showEffectWithCompletion:(void(^)())handler;
 - (void)showEnlargeEffect;
+- (void)showCircleEffectWithCompletion:(void(^)())handler;
 - (void)dismissEnlargeEffect:(void(^)())handler;
 @end
