@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface TapEffectView : UIView
+
+- (id)initWithShareIcons:(NSArray*)icons andTitles:(NSArray*)titles;
+
 - (void)showEffectWithCompletion:(void(^)())handler;
 - (void)showEnlargeEffect;
-- (void)showCircleEffectWithCompletion:(void(^)())handler;
 - (void)dismissEnlargeEffect:(void(^)())handler;
+- (void)showCircleEffectWithCompletion:(void(^)())handler;
+
 @end

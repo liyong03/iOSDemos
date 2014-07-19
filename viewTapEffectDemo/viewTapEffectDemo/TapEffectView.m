@@ -9,6 +9,7 @@
 #import "TapEffectView.h"
 #import "JNWSpringAnimation.h"
 #import "Evaluate.h"
+#import "ShareButtonView.h"
 
 @interface TapEffectView()
 
@@ -17,8 +18,38 @@
 @end
 
 @implementation TapEffectView {
+    NSMutableArray* _shareBtns;
+    
     CALayer* _layer;
     CAShapeLayer* _btnLayer;
+}
+
+- (id)initWithShareIcons:(NSArray*)icons andTitles:(NSArray*)titles {
+    self = [self initWithFrame:CGRectMake(0, 0, 60, 60)];
+    if (self) {
+        _shareBtns = [NSMutableArray array];
+        [self createAllShareBtnsWithIcons:icons andTitles:titles];
+    }
+    
+    return self;
+}
+
+- (void)createAllShareBtnsWithIcons:(NSArray*)icons andTitles:(NSArray*)titles {
+    int n = icons.count;
+    const CGFloat distance = 100.f;
+    const CGFloat shareSize = 80;
+    CGFloat angle = M_PI/(n*2);
+    for (int i=0; i<n; i++) {
+        CGFloat fan = angle*(i*2+1);
+        CGPoint p;
+        p.x = roundf(-distance * cosf(fan) + self.bounds.size.width/2);
+        p.y = roundf(-distance * sinf(fan) + self.bounds.size.height/2);
+        
+        CGRect frame = CGRectMake(p.x-shareSize/2, p.y-shareSize/2, shareSize, shareSize);
+        ShareButtonView* view = [[ShareButtonView alloc] initWithIcon:icons[i] andTitle:titles[i]];
+        view.frame = frame;
+        [self addSubview:view];
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame

@@ -54,7 +54,11 @@ static TapEffectView* _effectView = nil;
     for (UITouch* touch in [[touches objectEnumerator] allObjects] ) {
         if (touch) {
             CGPoint touchPoint = [touch locationInView:self];
-            TapEffectView* effectView = [[TapEffectView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+            
+            UIImage* icon = [UIImage imageNamed:@"pinterest"];
+            NSString* title = @"Pinterest";
+            
+            TapEffectView* effectView = [[TapEffectView alloc] initWithShareIcons:@[icon,icon,icon] andTitles:@[title, title, title]];
             effectView.center = touchPoint;
             [self addSubview:effectView];
             [effectView showCircleEffectWithCompletion:^{
