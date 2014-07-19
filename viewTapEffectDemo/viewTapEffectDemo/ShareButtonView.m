@@ -184,4 +184,8 @@
     [_doneLabel.layer addAnimation:doneAnimation forKey:@"doneAnimation"];
 }
 
+- (void) showAnimation {
+    
+}
+
 @end
