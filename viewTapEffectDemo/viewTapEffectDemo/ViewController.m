@@ -89,6 +89,8 @@ static TapEffectView* _effectView = nil;
 
 @implementation ViewController {
     ShareButtonView* _shareButton;
+    
+    UIButton* _showBtn;
     UIButton* _playBtn;
 }
 
@@ -96,11 +98,6 @@ static TapEffectView* _effectView = nil;
     self.view = [[YLView alloc] init];
     self.view.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:1.0 alpha:1.0];
     
-    _playBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_playBtn setTitle:@"play" forState:UIControlStateNormal];
-    _playBtn.frame = CGRectMake(100, 400, 120, 40);
-    [_playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_playBtn];
 }
 
 - (void)viewDidLoad
@@ -108,9 +105,18 @@ static TapEffectView* _effectView = nil;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _shareButton = [[ShareButtonView alloc] initWithIcon:[UIImage imageNamed:@"pinterest"] andTitle:@"Pinterest"];
-    _shareButton.frame = CGRectMake(100, 100, 100, 100);
-    [self.view addSubview:_shareButton];
+    _playBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_playBtn setTitle:@"play" forState:UIControlStateNormal];
+    _playBtn.frame = CGRectMake(100, 450, 120, 40);
+    [_playBtn addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_playBtn];
+    
+    
+    _showBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_showBtn setTitle:@"show" forState:UIControlStateNormal];
+    _showBtn.frame = CGRectMake(100, 400, 120, 40);
+    [_showBtn addTarget:self action:@selector(show:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_showBtn];
     
     CGPoint c = {0,0};
     CGPoint p1 = {1,0};
@@ -148,6 +154,17 @@ static TapEffectView* _effectView = nil;
     animation.removedOnCompletion = NO;
     
     [_shareButton.layer addAnimation:animation forKey:@"tapEffect"];
+}
+
+- (void)show:(id)sender {
+    if (_shareButton)
+    {
+        [_shareButton removeFromSuperview];
+    }
+    _shareButton = [[ShareButtonView alloc] initWithIcon:[UIImage imageNamed:@"pinterest"] andTitle:@"Pinterest"];
+    _shareButton.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:_shareButton];
+    [_shareButton showAnimation];
 }
 
 @end

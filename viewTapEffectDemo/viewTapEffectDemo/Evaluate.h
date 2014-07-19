@@ -44,3 +44,11 @@
 - (id)initWithOmega:(double)newOmega zeta:(double)newZeta;
 
 @end
+
+@interface YLSPringAnimation : NSObject
+
++ (NSMutableArray*)calculateKeyFramesFromeStartValue:(double)startValue
+                                            endValue:(double)endValue
+                                   interstitialSteps:(NSUInteger)steps;
+
+@end

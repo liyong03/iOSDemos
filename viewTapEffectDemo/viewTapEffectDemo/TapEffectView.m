@@ -71,7 +71,7 @@
     animation.duration = scaleTime;
     //    animation.fromValue = @(0.01);
     //    animation.toValue = @(1);
-    animation.values = [self calculateKeyFramesFromeStartValue:0.01 endValue:1.0 interstitialSteps:10];
+    animation.values = [YLSPringAnimation calculateKeyFramesFromeStartValue:0.01 endValue:1.0 interstitialSteps:10];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.fillMode = kCAFillModeForwards;
     animation.removedOnCompletion = NO;
@@ -236,30 +236,6 @@
     } completion:^(BOOL finished) {
         handler();
     }];
-}
-
-- (NSMutableArray*)calculateKeyFramesFromeStartValue:(double)startValue
-                                            endValue:(double)endValue
-                                   interstitialSteps:(NSUInteger)steps
-{
-    NSUInteger count = steps + 2;
-    SecondOrderResponseEvaluator* evaluator = [[SecondOrderResponseEvaluator alloc] initWithOmega:20.0 zeta:0.4];
-    NSMutableArray *valueArray = [NSMutableArray arrayWithCapacity:count];
-    
-    double progress = 0.0;
-    double increment = 1.0 / (double)(count - 1);
-    NSUInteger i;
-    for (i = 0; i < count; i++)
-    {
-        double value =
-        startValue +
-        [evaluator evaluateAt:progress] * (endValue - startValue);
-        [valueArray addObject:[NSNumber numberWithDouble:value]];
-        
-        progress += increment;
-    }
-    
-    return valueArray;
 }
 
 @end

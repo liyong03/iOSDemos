@@ -7,6 +7,7 @@
 //
 
 #import "ShareButtonView.h"
+#import "Evaluate.h"
 
 @interface ShareButtonView()
 
@@ -186,6 +187,15 @@
 
 - (void) showAnimation {
     
+    CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    animation.delegate = self;
+    animation.duration = 0.3;
+    animation.values = [YLSPringAnimation calculateKeyFramesFromeStartValue:0.01 endValue:1.0 interstitialSteps:10];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    
+    [self.layer addAnimation:animation forKey:@"showAnimation"];
 }
 
 @end

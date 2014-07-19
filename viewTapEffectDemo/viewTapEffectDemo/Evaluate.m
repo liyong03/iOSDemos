@@ -77,3 +77,31 @@
 
 @end
 
+@implementation YLSPringAnimation
+
++ (NSMutableArray*)calculateKeyFramesFromeStartValue:(double)startValue
+                                            endValue:(double)endValue
+                                   interstitialSteps:(NSUInteger)steps
+{
+    NSUInteger count = steps + 2;
+    SecondOrderResponseEvaluator* evaluator = [[SecondOrderResponseEvaluator alloc] initWithOmega:20.0 zeta:0.4];
+    NSMutableArray *valueArray = [NSMutableArray arrayWithCapacity:count];
+    
+    double progress = 0.0;
+    double increment = 1.0 / (double)(count - 1);
+    NSUInteger i;
+    for (i = 0; i < count; i++)
+    {
+        double value =
+        startValue +
+        [evaluator evaluateAt:progress] * (endValue - startValue);
+        [valueArray addObject:[NSNumber numberWithDouble:value]];
+        
+        progress += increment;
+    }
+    
+    return valueArray;
+}
+
+@end
+
