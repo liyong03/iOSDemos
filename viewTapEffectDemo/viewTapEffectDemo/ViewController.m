@@ -92,6 +92,7 @@ static TapEffectView* _effectView = nil;
     
     UIButton* _showBtn;
     UIButton* _playBtn;
+    UIButton* _selectBtn;
 }
 
 - (void)loadView {
@@ -117,6 +118,13 @@ static TapEffectView* _effectView = nil;
     _showBtn.frame = CGRectMake(100, 400, 120, 40);
     [_showBtn addTarget:self action:@selector(show:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_showBtn];
+    
+    
+    _selectBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_selectBtn setTitle:@"select" forState:UIControlStateNormal];
+    _selectBtn.frame = CGRectMake(100, 500, 120, 40);
+    [_selectBtn addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_selectBtn];
     
     CGPoint c = {0,0};
     CGPoint p1 = {1,0};
@@ -144,16 +152,6 @@ static TapEffectView* _effectView = nil;
 
 - (void)play:(id)sender {
     [_shareButton animateToDone];
-    
-    CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    animation.duration = 0.1f;
-    animation.fromValue = @(1);
-    animation.toValue = @(1.2);
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-    animation.fillMode = kCAFillModeForwards;
-    animation.removedOnCompletion = NO;
-    
-    [_shareButton.layer addAnimation:animation forKey:@"tapEffect"];
 }
 
 - (void)show:(id)sender {
@@ -165,6 +163,17 @@ static TapEffectView* _effectView = nil;
     _shareButton.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:_shareButton];
     [_shareButton showAnimation];
+}
+
+- (void)select:(id)sender {
+    static BOOL isSelected = NO;
+    if (isSelected) {
+        [_shareButton resetAnimation];
+    } else {
+        [_shareButton selectAnimation];
+    }
+    
+    isSelected = !isSelected;
 }
 
 @end
