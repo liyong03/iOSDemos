@@ -20,6 +20,7 @@
     CAShapeLayer*   _iconLayer;
     UILabel*        _titleLabel;
     UILabel*        _doneLabel;
+    UILabel*        _doneMarkLabel;
 }
 
 - (id)initWithIcon:(UIImage*)icon andTitle:(NSString*)title
@@ -37,6 +38,12 @@
 - (void)_setup {
     
     _iconView = [[UIImageView alloc] initWithImage:_shareIcon];
+    _doneMarkLabel = [[UILabel alloc] init];
+    _doneMarkLabel.text = @"✔︎";
+    _doneMarkLabel.textColor = [UIColor grayColor];
+    _doneMarkLabel.font = [UIFont systemFontOfSize:40];
+    _doneMarkLabel.textAlignment = NSTextAlignmentCenter;
+    _doneMarkLabel.hidden = YES;
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = _shareTitle;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -46,6 +53,7 @@
     _doneLabel.hidden = YES;
     
     [self addSubview:_iconView];
+    [self addSubview:_doneMarkLabel];
     [self addSubview:_titleLabel];
     [self addSubview:_doneLabel];
     
@@ -72,6 +80,7 @@
                                wid, wid);
     square = CGRectInset(square, 10, 10);
     _iconView.frame = square;
+    _doneMarkLabel.frame = _iconView.frame;
     
     _iconLayer.bounds = _iconView.bounds;
     _iconLayer.position = _iconView.center;
@@ -81,7 +90,7 @@
 - (void)animateToDone {
     
     CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
-    animation.duration = 0.3;
+    animation.duration = 0.5;
     animation.fromValue = (id)[[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
     animation.toValue = (id)[UIColor whiteColor].CGColor;
     //animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
@@ -89,6 +98,34 @@
     animation.removedOnCompletion = NO;
     
     [_iconLayer addAnimation:animation forKey:@"done"];
+    
+    _doneMarkLabel.hidden = NO;
+    _doneMarkLabel.layer.opacity = 0;
+    CABasicAnimation* doneappear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    doneappear.duration = 0.5;
+    doneappear.beginTime = 0.0;
+    doneappear.fromValue = @(0);
+    doneappear.toValue = @(1);
+    doneappear.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    doneappear.fillMode = kCAFillModeForwards;
+    doneappear.removedOnCompletion = NO;
+    
+    CABasicAnimation* moveUp3 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    moveUp3.duration = 0.5;
+    moveUp3.beginTime = 0.0;
+    moveUp3.fromValue = @(1.2);
+    moveUp3.toValue = @(1);
+    moveUp3.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    moveUp3.fillMode = kCAFillModeForwards;
+    moveUp3.removedOnCompletion = NO;
+    
+    CAAnimationGroup* doneMarkAnimation = [[CAAnimationGroup alloc] init];
+    doneMarkAnimation.animations = @[ doneappear, moveUp3 ];
+    doneMarkAnimation.duration = 0.5;
+    doneMarkAnimation.delegate = self;
+    doneMarkAnimation.fillMode = kCAFillModeForwards;
+    doneMarkAnimation.removedOnCompletion = NO;
+    [_doneMarkLabel.layer addAnimation:doneMarkAnimation forKey:@"doneAnimation"];
     
     
     CABasicAnimation* disappear = [CABasicAnimation animationWithKeyPath:@"opacity"];
