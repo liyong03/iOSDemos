@@ -21,6 +21,8 @@
 
 @implementation TapEffectView {
     NSMutableArray* _shareBtns;
+    ShareButtonView*       _selectedView;
+    CGFloat         _avgAng;
     
     CAShapeLayer*   _bgLayer;
     CALayer*        _layer;
@@ -32,6 +34,7 @@
     if (self) {
         _shareBtns = [NSMutableArray array];
         _state = TapEffectUnopen;
+        _selectedView = nil;
         [self createAllShareBtnsWithIcons:icons andTitles:titles];
     }
     
@@ -43,6 +46,7 @@
     const CGFloat distance = 100.f;
     const CGFloat shareSize = 80;
     CGFloat angle = M_PI/(n*2);
+    _avgAng = angle;
     for (int i=0; i<n; i++) {
         CGFloat fan = angle*(i*2+1);
         CGPoint p;
@@ -302,20 +306,62 @@
     }];
 }
 
+- (float)angleForCenterPoint:(CGPoint)center andPoint1:(CGPoint)p1 andPoint2:(CGPoint)p2 {
+    if (CGPointEqualToPoint(center, p1) || CGPointEqualToPoint(center, p2))
+        return 0.0f;
+    CGPoint v1 = CGPointMake(p1.x-center.x, p1.y-center.y);
+    CGPoint v2 = CGPointMake(p2.x-center.x, p2.y-center.y);
+    CGFloat dot = v1.x*v2.x + v1.y*v2.y;
+    CGFloat arccos = dot/(sqrt((v1.x*v1.x+v1.y*v1.y)*(v2.x*v2.x+v2.y*v2.y)));
+    CGFloat result = acosf(arccos);
+    return result;
+}
+
 - (void)moveTo:(CGPoint)point {
     CGFloat radius = 20;
     CGPoint center = {self.bounds.size.width/2, self.bounds.size.height/2};
     CGVector v = CGVectorMakeWithPoints(center, point);
     CGFloat dis = CGVectorLength(v);
-    if (dis > radius) {
+    if (dis >= radius) {
         dis = radius;
+        
+        ShareButtonView* selectedView;
+        NSInteger selected = -1;
+        CGFloat minAng = 2*M_PI;
+        for (int i=0; i<_shareBtns.count; i++) {
+            ShareButtonView* view = (ShareButtonView*)_shareBtns[i];
+            CGPoint vP = view.center;
+            CGFloat ang = [self angleForCenterPoint:center andPoint1:point andPoint2:vP];
+            if (minAng > ang) {
+                selectedView = view;
+                selected = i;
+                minAng = ang;
+            }
+        }
+        if (minAng <= _avgAng) {
+            if (_selectedView != selectedView) {
+                if (_selectedView) {
+                    [_selectedView resetAnimation];
+                }
+                _selectedView = selectedView;
+                [_selectedView selectAnimation];
+            }
+        } else {
+            [_selectedView resetAnimation];
+            _selectedView = nil;
+        }
+    } else {
+        [_selectedView resetAnimation];
+        _selectedView = nil;
     }
     CGVector vNorm = CGVectorNormalize(v);
     CGVector newV = CGVectorMultiply(vNorm, dis);
     CGPoint btnPos = CGPointFromStartAndVector(center, newV);
     
+    [CATransaction begin];
+    [CATransaction setAnimationDuration:0];
     _btnLayer.position = btnPos;
-    
+    [CATransaction commit];
 }
 
 @end

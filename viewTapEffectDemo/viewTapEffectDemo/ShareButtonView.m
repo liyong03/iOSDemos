@@ -22,6 +22,8 @@
     UILabel*        _titleLabel;
     UILabel*        _doneLabel;
     UILabel*        _doneMarkLabel;
+    
+    BOOL            _isSelected;
 }
 
 - (id)initWithIcon:(UIImage*)icon andTitle:(NSString*)title
@@ -31,6 +33,7 @@
         // Initialization code
         _shareIcon = icon;
         _shareTitle = title;
+        _isSelected = NO;
         [self _setup];
     }
     return self;
@@ -200,6 +203,10 @@
 
 
 - (void)selectAnimation {
+    if (_isSelected)
+        return;
+    
+    _isSelected = YES;
     CABasicAnimation* enlarge = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     enlarge.duration = 0.25;
     enlarge.fromValue = @(1);
@@ -237,6 +244,10 @@
 }
 
 - (void)resetAnimation {
+    if (!_isSelected)
+        return;
+    
+    _isSelected = NO;
     
     CABasicAnimation* shrink = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     shrink.duration = 0.25;
