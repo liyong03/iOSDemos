@@ -51,7 +51,9 @@ static TapEffectView* _effectView = nil;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     NSLog(@"touched %lu!", (unsigned long)touches.count);
-    for (UITouch* touch in [[touches objectEnumerator] allObjects] ) {
+    //for (UITouch* touch in [[touches objectEnumerator] allObjects] )
+    UITouch* touch = [[touches objectEnumerator] allObjects].firstObject;
+    {
         if (touch) {
             CGPoint touchPoint = [touch locationInView:self];
             
@@ -71,7 +73,15 @@ static TapEffectView* _effectView = nil;
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    NSLog(@"moved!");
+    UITouch* touch = [[touches objectEnumerator] allObjects].firstObject;
+    {
+        if (touch) {
+            CGPoint touchPoint = [touch locationInView:_effectView];
+            [_effectView moveTo:touchPoint];
+            
+            NSLog(@"moved to %@", NSStringFromCGPoint(touchPoint));
+        }
+    }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];

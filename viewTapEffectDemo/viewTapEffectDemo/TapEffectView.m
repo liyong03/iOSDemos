@@ -10,6 +10,7 @@
 #import "JNWSpringAnimation.h"
 #import "Evaluate.h"
 #import "ShareButtonView.h"
+#import "OMVector.h"
 
 @interface TapEffectView()
 
@@ -299,6 +300,22 @@
     } completion:^(BOOL finished) {
         handler();
     }];
+}
+
+- (void)moveTo:(CGPoint)point {
+    CGFloat radius = 20;
+    CGPoint center = {self.bounds.size.width/2, self.bounds.size.height/2};
+    CGVector v = CGVectorMakeWithPoints(center, point);
+    CGFloat dis = CGVectorLength(v);
+    if (dis > radius) {
+        dis = radius;
+    }
+    CGVector vNorm = CGVectorNormalize(v);
+    CGVector newV = CGVectorMultiply(vNorm, dis);
+    CGPoint btnPos = CGPointFromStartAndVector(center, newV);
+    
+    _btnLayer.position = btnPos;
+    
 }
 
 @end

@@ -24,4 +24,6 @@ typedef NS_ENUM(NSUInteger, TapEffectState) {
 - (void)dismissEnlargeEffect:(void(^)())handler;
 - (void)showCircleEffectWithCompletion:(void(^)())handler;
 
+- (void)moveTo:(CGPoint)point; //point should be in the coordinate of current view
+
 @end

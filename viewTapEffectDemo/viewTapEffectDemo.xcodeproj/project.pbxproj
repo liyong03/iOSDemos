@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E9B95FD197BC02C006D732C /* OMVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMVector.h; sourceTree = "<group>"; };
 		4EE20D2F19764AAC00FCF17B /* viewTapEffectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viewTapEffectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE20D3219764AAC00FCF17B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4EE20D3419764AAC00FCF17B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +146,7 @@
 				4EE20D791978984800FCF17B /* ShareButtonView.m */,
 				4EF5B9F9197A55A5003F99F0 /* Evaluate.h */,
 				4EF5B9FA197A55A5003F99F0 /* Evaluate.m */,
+				4E9B95FD197BC02C006D732C /* OMVector.h */,
 			);
 			path = viewTapEffectDemo;
 			sourceTree = "<group>";
