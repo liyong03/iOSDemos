@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, TapEffectState) {
+    TapEffectUnopen = 0,
+    TapEffectOpened,
+};
+
 @interface TapEffectView : UIView
+
+@property (nonatomic, assign, readonly) TapEffectState state;
 
 - (id)initWithShareIcons:(NSArray*)icons andTitles:(NSArray*)titles;
 

@@ -13,6 +13,7 @@
 
 @interface TapEffectView()
 
+@property (nonatomic, assign, readwrite) TapEffectState state;
 @property (nonatomic, copy) void(^completionHandler)();
 
 @end
@@ -20,14 +21,16 @@
 @implementation TapEffectView {
     NSMutableArray* _shareBtns;
     
-    CALayer* _layer;
-    CAShapeLayer* _btnLayer;
+    CAShapeLayer*   _bgLayer;
+    CALayer*        _layer;
+    CAShapeLayer*   _btnLayer;
 }
 
 - (id)initWithShareIcons:(NSArray*)icons andTitles:(NSArray*)titles {
     self = [self initWithFrame:CGRectMake(0, 0, 60, 60)];
     if (self) {
         _shareBtns = [NSMutableArray array];
+        _state = TapEffectUnopen;
         [self createAllShareBtnsWithIcons:icons andTitles:titles];
     }
     
@@ -48,7 +51,9 @@
         CGRect frame = CGRectMake(p.x-shareSize/2, p.y-shareSize/2, shareSize, shareSize);
         ShareButtonView* view = [[ShareButtonView alloc] initWithIcon:icons[i] andTitle:titles[i]];
         view.frame = frame;
+        view.hidden = YES;
         [self addSubview:view];
+        [_shareBtns addObject:view];
     }
 }
 
@@ -57,8 +62,16 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        _bgLayer = [CAShapeLayer layer];
+        _bgLayer.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8].CGColor;
+        _bgLayer.strokeColor = [UIColor whiteColor].CGColor;
+        _bgLayer.lineWidth = 2;
+        [self.layer addSublayer:_bgLayer];
+        _bgLayer.anchorPoint = CGPointMake(0.5, 0.5);
+        _bgLayer.opacity = 0.0;
+        
         _btnLayer = [CAShapeLayer layer];
-        _btnLayer.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8].CGColor;
+        _btnLayer.fillColor = [UIColor whiteColor].CGColor;
         _btnLayer.strokeColor = [UIColor whiteColor].CGColor;
         _btnLayer.lineWidth = 2;
         [self.layer addSublayer:_btnLayer];
@@ -72,6 +85,10 @@
     [super layoutSubviews];
     
     CGRect rect = self.bounds;
+    _bgLayer.path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:rect.size.width/2].CGPath;
+    _bgLayer.bounds = rect;
+    _bgLayer.position = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+    
     rect = CGRectInset(rect, 10, 10);
     _btnLayer.path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:rect.size.width/2].CGPath;
     _btnLayer.bounds = rect;
@@ -86,7 +103,7 @@
     layer.fillColor = [UIColor clearColor].CGColor;
     layer.strokeColor = [UIColor grayColor].CGColor;
     layer.lineWidth = 2;
-    [self.layer addSublayer:layer];
+    [self.layer insertSublayer:layer below:_btnLayer];
     layer.bounds = self.bounds;
     layer.anchorPoint = CGPointMake(0.5, 0.5);
     layer.position = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
@@ -181,33 +198,48 @@
     CAAnimationGroup *group = [[CAAnimationGroup alloc] init];
     group.animations = @[ animation, disappear ];
     group.duration = (scaleTime + disappTime);
-    group.delegate = self;
+    //group.delegate = self;
     group.fillMode = kCAFillModeForwards;
     group.removedOnCompletion = NO;
     
     [layer addAnimation:group forKey:@"tapEffect"];
     
     
-    CABasicAnimation* disappear2 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    disappear2.fromValue = @(1);
-    disappear2.toValue = @(0.01);
-    //disappear2.delegate = self;
+    CAKeyframeAnimation* disappear2 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+//    disappear2.fromValue = @(0.01);
+//    disappear2.toValue = @(1);
+    disappear2.values = [YLSPringAnimation calculateKeyFramesFromeStartValue:0.01 endValue:1.0 interstitialSteps:20];
     disappear2.fillMode = kCAFillModeForwards;
     disappear2.removedOnCompletion = NO;
-    disappear2.duration = disappTime;
-    disappear2.beginTime = scaleTime;
+    disappear2.duration = 0.8;
+    disappear2.beginTime = scaleTime + disappTime;
+    
+    CABasicAnimation* showOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    showOpacity.duration = 0.8;
+    showOpacity.beginTime = scaleTime + disappTime;
+    showOpacity.fromValue = @(1);
+    showOpacity.toValue = @(1);
+    showOpacity.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    showOpacity.fillMode = kCAFillModeForwards;
+    showOpacity.removedOnCompletion = NO;
     
     CAAnimationGroup *group2 = [[CAAnimationGroup alloc] init];
-    group2.animations = @[ disappear2 ];
-    group2.duration = (scaleTime + disappTime);
-    group2.delegate = self;
+    group2.animations = @[ disappear2, showOpacity ];
+    group2.duration = (scaleTime + disappTime + 0.8);
     group2.fillMode = kCAFillModeForwards;
     group2.removedOnCompletion = NO;
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((scaleTime-0.2) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [_btnLayer addAnimation:group2 forKey:@"tapEffect"];
-    //});
+    [_bgLayer addAnimation:group2 forKey:@"bgshowup"];
     
-    self.completionHandler = handler;
+    for (int i=0; i<_shareBtns.count; i++) {
+        ShareButtonView* view = (ShareButtonView*)_shareBtns[i];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((scaleTime + disappTime + 0.05*i) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            view.hidden = NO;
+            [view showAnimation];
+            self.state = TapEffectOpened;
+        });
+    }
+    
+    //self.completionHandler = handler;
 }
 
 - (void)showEnlargeEffect {
