@@ -55,11 +55,13 @@
     _titleLabel.text = _shareTitle;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.textColor = [UIColor whiteColor];
     _doneLabel = [[UILabel alloc] init];
     _doneLabel.textAlignment = NSTextAlignmentCenter;
     _doneLabel.text = @"done!";
     _doneLabel.hidden = YES;
     _doneLabel.font = [UIFont systemFontOfSize:14];
+    _doneLabel.textColor = [UIColor whiteColor];
     
     [self addSubview:_iconView];
     [self addSubview:_doneMarkLabel];
