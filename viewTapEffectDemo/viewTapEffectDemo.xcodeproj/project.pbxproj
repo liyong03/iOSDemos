@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E081DAC197C14B00007FA7B /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E081DAB197C14B00007FA7B /* CAAnimation+Blocks.m */; };
+		4E081DAD197C14B00007FA7B /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E081DAB197C14B00007FA7B /* CAAnimation+Blocks.m */; };
 		4EE20D3319764AAC00FCF17B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE20D3219764AAC00FCF17B /* Foundation.framework */; };
 		4EE20D3519764AAC00FCF17B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE20D3419764AAC00FCF17B /* CoreGraphics.framework */; };
 		4EE20D3719764AAC00FCF17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE20D3619764AAC00FCF17B /* UIKit.framework */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E081DAA197C14B00007FA7B /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
+		4E081DAB197C14B00007FA7B /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
 		4E9B95FD197BC02C006D732C /* OMVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMVector.h; sourceTree = "<group>"; };
 		4EE20D2F19764AAC00FCF17B /* viewTapEffectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viewTapEffectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE20D3219764AAC00FCF17B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +151,8 @@
 				4EF5B9F9197A55A5003F99F0 /* Evaluate.h */,
 				4EF5B9FA197A55A5003F99F0 /* Evaluate.m */,
 				4E9B95FD197BC02C006D732C /* OMVector.h */,
+				4E081DAA197C14B00007FA7B /* CAAnimation+Blocks.h */,
+				4E081DAB197C14B00007FA7B /* CAAnimation+Blocks.m */,
 			);
 			path = viewTapEffectDemo;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				4EE20D4319764AAC00FCF17B /* AppDelegate.m in Sources */,
 				4EE20D3F19764AAC00FCF17B /* main.m in Sources */,
 				4EF5B9FB197A55A5003F99F0 /* Evaluate.m in Sources */,
+				4E081DAC197C14B00007FA7B /* CAAnimation+Blocks.m in Sources */,
 				4EE20D6F197682EF00FCF17B /* NSValue+JNWAdditions.m in Sources */,
 				4EE20D691976571E00FCF17B /* TapEffectView.m in Sources */,
 				4EE20D7A1978984800FCF17B /* ShareButtonView.m in Sources */,
@@ -294,6 +301,7 @@
 			files = (
 				4EF5B9FC197A55A5003F99F0 /* Evaluate.m in Sources */,
 				4EE20D5E19764AAC00FCF17B /* viewTapEffectDemoTests.m in Sources */,
+				4E081DAD197C14B00007FA7B /* CAAnimation+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

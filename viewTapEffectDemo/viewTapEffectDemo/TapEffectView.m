@@ -20,9 +20,10 @@
 @end
 
 @implementation TapEffectView {
-    NSMutableArray* _shareBtns;
-    ShareButtonView*       _selectedView;
-    CGFloat         _avgAng;
+    NSMutableArray*     _shareBtns;
+    ShareButtonView*    _selectedView;
+    CGFloat             _avgAng;
+    NSTimer*            _selectTimer;
     
     CAShapeLayer*   _bgLayer;
     CALayer*        _layer;
@@ -152,13 +153,13 @@
     self.completionHandler = handler;
 }
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if (flag) {
-        if (self.completionHandler)
-            self.completionHandler();
-        self.completionHandler = nil;
-    }
-}
+//- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+//    if (flag) {
+//        if (self.completionHandler)
+//            self.completionHandler();
+//        self.completionHandler = nil;
+//    }
+//}
 
 - (void)showCircleEffectWithCompletion:(void(^)())handler {
     CGFloat edge = MIN(self.bounds.size.width, self.bounds.size.height);
@@ -244,7 +245,7 @@
         });
     }
     
-    //self.completionHandler = handler;
+    self.completionHandler = handler;
 }
 
 - (void)showEnlargeEffect {
@@ -345,14 +346,20 @@
                 }
                 _selectedView = selectedView;
                 [_selectedView selectAnimation];
+                [_selectTimer invalidate];
+                _selectTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(doneSelected) userInfo:nil repeats:NO];
             }
         } else {
             [_selectedView resetAnimation];
             _selectedView = nil;
+            [_selectTimer invalidate];
+            _selectTimer = nil;
         }
     } else {
         [_selectedView resetAnimation];
         _selectedView = nil;
+        [_selectTimer invalidate];
+        _selectTimer = nil;
     }
     CGVector vNorm = CGVectorNormalize(v);
     CGVector newV = CGVectorMultiply(vNorm, dis);
@@ -362,6 +369,15 @@
     [CATransaction setAnimationDuration:0];
     _btnLayer.position = btnPos;
     [CATransaction commit];
+}
+
+- (void)doneSelected {
+    [_selectedView animateToDoneWithHandler:^{
+        if (self.completionHandler) {
+            self.completionHandler();
+        }
+        self.completionHandler = nil;
+    }];
 }
 
 @end

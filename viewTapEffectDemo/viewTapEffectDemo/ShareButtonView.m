@@ -8,11 +8,13 @@
 
 #import "ShareButtonView.h"
 #import "Evaluate.h"
+#import "CAAnimation+Blocks.h"
 
 @interface ShareButtonView()
 
 @property (nonatomic, strong, readwrite) UIImage* shareIcon;
 @property (nonatomic, copy, readwrite) NSString* shareTitle;
+@property (nonatomic, copy) void(^doneHandler)();
 
 @end
 
@@ -91,7 +93,7 @@
     _iconLayer.path = [UIBezierPath bezierPathWithRoundedRect:_iconLayer.bounds cornerRadius:_iconLayer.bounds.size.width/2].CGPath;
 }
 
-- (void)animateToDone {
+- (void)animateToDoneWithHandler:(void(^)())doneBlock; {
     
     CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
     animation.duration = 0.5;
@@ -181,10 +183,13 @@
     
     CAAnimationGroup* doneAnimation = [[CAAnimationGroup alloc] init];
     doneAnimation.animations = @[ appear, moveUp2 ];
-    doneAnimation.duration = 0.5;
+    doneAnimation.duration = 1.0;
     doneAnimation.delegate = self;
     doneAnimation.fillMode = kCAFillModeForwards;
     doneAnimation.removedOnCompletion = NO;
+    doneAnimation.completion = ^(BOOL finished) {
+        doneBlock();
+    };
     [_doneLabel.layer addAnimation:doneAnimation forKey:@"doneAnimation"];
 }
 

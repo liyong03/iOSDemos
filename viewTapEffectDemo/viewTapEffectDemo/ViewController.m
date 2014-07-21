@@ -165,7 +165,7 @@ static TapEffectView* _effectView = nil;
 }
 
 - (void)play:(id)sender {
-    [_shareButton animateToDone];
+    [_shareButton animateToDoneWithHandler:nil];
 }
 
 - (void)show:(id)sender {
