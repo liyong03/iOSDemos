@@ -60,7 +60,9 @@ static TapEffectView* _effectView = nil;
             UIImage* icon = [UIImage imageNamed:@"pinterest"];
             NSString* title = @"Pinterest";
             
-            TapEffectView* effectView = [[TapEffectView alloc] initWithShareIcons:@[icon,icon,icon] andTitles:@[title, title, title]];
+            UIImage* instaIcon = [UIImage imageNamed:@"instagram"];
+            
+            TapEffectView* effectView = [[TapEffectView alloc] initWithShareIcons:@[icon,instaIcon,icon] andTitles:@[title, @"instagram", title]];
             effectView.center = touchPoint;
             [self addSubview:effectView];
             [effectView showCircleEffectWithCompletion:^{

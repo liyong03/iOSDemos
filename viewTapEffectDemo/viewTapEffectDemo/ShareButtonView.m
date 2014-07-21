@@ -44,6 +44,7 @@
 - (void)_setup {
     
     _iconView = [[UIImageView alloc] initWithImage:_shareIcon];
+    _iconView.contentMode = UIViewContentModeScaleAspectFit;
     _doneMarkLabel = [[UILabel alloc] init];
     _doneMarkLabel.text = @"✔︎";
     _doneMarkLabel.textColor = [UIColor grayColor];
@@ -53,10 +54,12 @@
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = _shareTitle;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     _doneLabel = [[UILabel alloc] init];
     _doneLabel.textAlignment = NSTextAlignmentCenter;
     _doneLabel.text = @"done!";
     _doneLabel.hidden = YES;
+    _doneLabel.font = [UIFont systemFontOfSize:14];
     
     [self addSubview:_iconView];
     [self addSubview:_doneMarkLabel];
