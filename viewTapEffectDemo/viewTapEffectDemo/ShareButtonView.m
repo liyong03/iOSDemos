@@ -26,6 +26,7 @@
     UILabel*        _doneMarkLabel;
     
     BOOL            _isSelected;
+    BOOL            _isDone;
 }
 
 - (id)initWithIcon:(UIImage*)icon andTitle:(NSString*)title
@@ -36,6 +37,7 @@
         _shareIcon = icon;
         _shareTitle = title;
         _isSelected = NO;
+        _isDone = NO;
         [self _setup];
     }
     return self;
@@ -99,6 +101,9 @@
 }
 
 - (void)animateToDoneWithHandler:(void(^)())doneBlock; {
+    if (_isDone)
+        return;
+    _isDone = YES;
     
     CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
     animation.duration = 0.5;
@@ -213,7 +218,7 @@
 
 
 - (void)selectAnimation {
-    if (_isSelected)
+    if (_isSelected || _isDone)
         return;
     
     _isSelected = YES;
@@ -254,7 +259,7 @@
 }
 
 - (void)resetAnimation {
-    if (!_isSelected)
+    if (!_isSelected || _isDone)
         return;
     
     _isSelected = NO;
