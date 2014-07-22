@@ -50,6 +50,7 @@
     _doneMarkLabel = [[UILabel alloc] init];
     _doneMarkLabel.text = @"✔︎";
     _doneMarkLabel.textColor = [UIColor grayColor];
+    _doneMarkLabel.backgroundColor = [UIColor clearColor];
     _doneMarkLabel.font = [UIFont systemFontOfSize:40];
     _doneMarkLabel.textAlignment = NSTextAlignmentCenter;
     _doneMarkLabel.hidden = YES;
@@ -58,12 +59,15 @@
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:14];
     _titleLabel.textColor = [UIColor whiteColor];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    [_titleLabel sizeToFit];
     _doneLabel = [[UILabel alloc] init];
     _doneLabel.textAlignment = NSTextAlignmentCenter;
     _doneLabel.text = @"done!";
     _doneLabel.hidden = YES;
     _doneLabel.font = [UIFont systemFontOfSize:14];
     _doneLabel.textColor = [UIColor whiteColor];
+    _doneLabel.backgroundColor = [UIColor clearColor];
     
     [self addSubview:_iconView];
     [self addSubview:_doneMarkLabel];
@@ -82,7 +86,7 @@
 
 - (void)layoutSubviews {
     CGRect frame = self.bounds;
-    CGFloat labelHeight = 15;
+    CGFloat labelHeight = _titleLabel.frame.size.height;
     _titleLabel.frame = CGRectMake(0, frame.size.height - labelHeight, frame.size.width, labelHeight);
     _doneLabel.frame = _titleLabel.frame;
     
