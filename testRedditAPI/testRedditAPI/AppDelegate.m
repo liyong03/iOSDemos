@@ -7,8 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import <NXOAuth2.h>
 
 @implementation AppDelegate
+
++ (void)initialize;
+{
+    [[NXOAuth2AccountStore sharedStore] setClientID:@"lyaFw-a3NhN-fA"
+                                             secret:@"VU6J1859ZMaFd4yLshkFmQycMcI"
+                                   authorizationURL:[NSURL URLWithString:@"https://ssl.reddit.com/api/v1/authorize"]
+                                           tokenURL:[NSURL URLWithString:@"https://ssl.reddit.com/api/v1/access_token"]
+                                        redirectURL:[NSURL URLWithString:@"redditbot://ios"]
+                                     forAccountType:@"redditBot"];
+    NSDictionary* config = [[NXOAuth2AccountStore sharedStore] configurationForAccountType:@"redditBot"];
+    NSMutableDictionary* newConfig = [NSMutableDictionary dictionaryWithDictionary:config];
+    [newConfig setObject:[NSSet setWithObjects:@"account", nil] forKey:kNXOAuth2AccountStoreConfigurationScope];
+    [[NXOAuth2AccountStore sharedStore] setConfiguration:newConfig forAccountType:@"redditBot"];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -41,6 +56,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return YES;
 }
 
 @end

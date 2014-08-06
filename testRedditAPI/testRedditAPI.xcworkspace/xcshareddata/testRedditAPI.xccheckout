@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B2A16188-5F9A-4B44-860E-7FA1BA889574</string>
+	<key>IDESourceControlProjectName</key>
+	<string>testRedditAPI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EEBB4F04-2296-411C-BB74-C8D55174D159</key>
+		<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>testRedditAPI/testRedditAPI.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EEBB4F04-2296-411C-BB74-C8D55174D159</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EEBB4F04-2296-411C-BB74-C8D55174D159</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EEBB4F04-2296-411C-BB74-C8D55174D159</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSDemos</string>
+		</dict>
+	</array>
+</dict>
+</plist>

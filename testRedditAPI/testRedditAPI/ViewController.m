@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <NXOAuth2.h>
 
 @interface ViewController ()
 
@@ -18,6 +19,27 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreAccountsDidChangeNotification
+                                                      object:[NXOAuth2AccountStore sharedStore]
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *aNotification){
+                                                      // Update your UI
+                                                      NSLog(@"success: %@", aNotification);
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreDidFailToRequestAccessNotification
+                                                      object:[NXOAuth2AccountStore sharedStore]
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *aNotification){
+                                                      NSError *error = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreErrorKey];
+                                                      // Do something with the error
+                                                      NSLog(@"error: %@", error);
+                                                  }];
+    
+    [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:@"redditBot"];
+//                                                              username:@"liyong03"
+//                                                              password:@"388135_yjz"];
 }
 
 - (void)didReceiveMemoryWarning
