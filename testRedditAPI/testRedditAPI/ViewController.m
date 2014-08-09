@@ -38,8 +38,6 @@
                                                   }];
     
     [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:@"redditBot"];
-//                                                              username:@"liyong03"
-//                                                              password:@"388135_yjz"];
 }
 
 - (void)didReceiveMemoryWarning
