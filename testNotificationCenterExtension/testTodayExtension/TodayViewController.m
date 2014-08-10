@@ -16,14 +16,15 @@
 @implementation TodayViewController
 
 - (void)awakeFromNib {
-  CGSize size = self.preferredContentSize;
-  size.height = 200;
-  [self setPreferredContentSize:size];
+    CGSize size = self.preferredContentSize;
+    size.height = 200;
+    [self setPreferredContentSize:size];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.helloLabel.textColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,8 +38,11 @@
     // If an error is encoutered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
-
-    completionHandler(NCUpdateResultNewData);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.helloLabel.textColor = [UIColor greenColor];
+        completionHandler(NCUpdateResultNewData);
+    });
 }
 
 @end
