@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcA-Wk-tcm">
-                                <rect key="frame" x="117" y="202" width="86" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcA-Wk-tcm">
+                                <rect key="frame" x="110" y="197" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="Pbh-6r-Fgi"/>
-                                    <constraint firstAttribute="height" constant="86" id="yQw-fv-rew"/>
+                                    <constraint firstAttribute="width" constant="100" id="Pbh-6r-Fgi"/>
+                                    <constraint firstAttribute="height" constant="100" id="yQw-fv-rew"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="camera">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -31,17 +31,23 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1178664864" green="0.74823356200000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="ZcA-Wk-tcm" secondAttribute="centerX" id="J5o-lC-iAS"/>
-                            <constraint firstItem="ZcA-Wk-tcm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="182" id="Wek-Th-SY6"/>
+                            <constraint firstItem="ZcA-Wk-tcm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="Wek-Th-SY6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="ZcA-Wk-tcm" id="Yuu-C5-YYo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="39" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

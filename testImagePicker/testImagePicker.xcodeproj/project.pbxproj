@@ -22,6 +22,7 @@
 		4EE8CC74199B345200FCD190 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8CC72199B345200FCD190 /* InfoPlist.strings */; };
 		4EE8CC76199B345200FCD190 /* testImagePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8CC75199B345200FCD190 /* testImagePickerTests.m */; };
 		4EE8CC80199B388600FCD190 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8CC7F199B388600FCD190 /* MobileCoreServices.framework */; };
+		4EE8CC82199B516A00FCD190 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8CC81199B516A00FCD190 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4EE8CC73199B345200FCD190 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4EE8CC75199B345200FCD190 /* testImagePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testImagePickerTests.m; sourceTree = "<group>"; };
 		4EE8CC7F199B388600FCD190 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4EE8CC81199B516A00FCD190 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE8CC82199B516A00FCD190 /* AVFoundation.framework in Frameworks */,
 				4EE8CC80199B388600FCD190 /* MobileCoreServices.framework in Frameworks */,
 				4EE8CC4D199B345200FCD190 /* CoreGraphics.framework in Frameworks */,
 				4EE8CC4F199B345200FCD190 /* UIKit.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		4EE8CC49199B345100FCD190 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EE8CC81199B516A00FCD190 /* AVFoundation.framework */,
 				4EE8CC7F199B388600FCD190 /* MobileCoreServices.framework */,
 				4EE8CC4A199B345100FCD190 /* Foundation.framework */,
 				4EE8CC4C199B345200FCD190 /* CoreGraphics.framework */,
@@ -460,6 +464,7 @@
 				4EE8CC7B199B345200FCD190 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EE8CC7C199B345200FCD190 /* Build configuration list for PBXNativeTarget "testImagePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +473,7 @@
 				4EE8CC7E199B345200FCD190 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
