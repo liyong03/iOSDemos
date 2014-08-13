@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)openImagePicker:(id)sender;
+
 @end
