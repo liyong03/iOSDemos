@@ -1,0 +1,13 @@
+PODS:
+  - TSMessages (0.9.3)
+  - YLGIFImage (0.11)
+
+DEPENDENCIES:
+  - TSMessages (= 0.9.3)
+  - YLGIFImage
+
+SPEC CHECKSUMS:
+  TSMessages: de3b05968ed3fab63a159870354a2f4da7185789
+  YLGIFImage: ffdc4cb9faf077217aacb1cdfe69689afe403f21
+
+COCOAPODS: 0.33.1
