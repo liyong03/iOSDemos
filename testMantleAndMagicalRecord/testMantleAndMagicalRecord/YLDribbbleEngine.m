@@ -11,7 +11,6 @@
 #import "YLDribbbleUser.h"
 #import "YLDribbbleShot.h"
 #import "YLDribbbleComment.h"
-#import "MTLJSONAdapter+Array.h"
 
 #import <Mantle.h>
 #import <AFNetworking.h>
