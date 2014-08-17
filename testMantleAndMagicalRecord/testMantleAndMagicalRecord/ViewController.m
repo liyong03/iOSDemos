@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YLDribbbleEngine.h"
 
 @interface ViewController ()
 
@@ -26,4 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)downloadPopular:(id)sender {
+    [YLDribbbleEngine getPopularShotsWithPage:1 successBlock:^(YLDribbbleShotList *list) {
+        NSLog(@"list: %@", list);
+    } failedBlock:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
 @end

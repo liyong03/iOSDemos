@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)downloadPopular:(id)sender;
+
 @end

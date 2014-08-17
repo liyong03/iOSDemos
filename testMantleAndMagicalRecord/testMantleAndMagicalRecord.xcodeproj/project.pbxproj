@@ -39,6 +39,10 @@
 		4E86335919A0D15400E61585 /* YLListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86334619A0D13900E61585 /* YLListModel.m */; };
 		4E86335A19A0D15400E61585 /* YLPlayerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86334819A0D13900E61585 /* YLPlayerListModel.m */; };
 		4E86335B19A0D15400E61585 /* YLShotsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86334A19A0D13900E61585 /* YLShotsListModel.m */; };
+		4E86335E19A0F7EB00E61585 /* Dribbble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E86335C19A0F7EB00E61585 /* Dribbble.xcdatamodeld */; };
+		4E86335F19A0F7EB00E61585 /* Dribbble.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E86335C19A0F7EB00E61585 /* Dribbble.xcdatamodeld */; };
+		4E86336219A0FCD900E61585 /* YLDribbbleCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86336119A0FCD900E61585 /* YLDribbbleCoreDataManager.m */; };
+		4E86336319A0FCD900E61585 /* YLDribbbleCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86336119A0FCD900E61585 /* YLDribbbleCoreDataManager.m */; };
 		C39D3F0D0ED44F1BBC2BFFC5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1FB44B469241999483116A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,9 @@
 		4E86334819A0D13900E61585 /* YLPlayerListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPlayerListModel.m; sourceTree = "<group>"; };
 		4E86334919A0D13900E61585 /* YLShotsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLShotsListModel.h; sourceTree = "<group>"; };
 		4E86334A19A0D13900E61585 /* YLShotsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLShotsListModel.m; sourceTree = "<group>"; };
+		4E86335D19A0F7EB00E61585 /* Dribbble.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dribbble.xcdatamodel; sourceTree = "<group>"; };
+		4E86336019A0FCD900E61585 /* YLDribbbleCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDribbbleCoreDataManager.h; sourceTree = "<group>"; };
+		4E86336119A0FCD900E61585 /* YLDribbbleCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDribbbleCoreDataManager.m; sourceTree = "<group>"; };
 		C64E4C2957E042BD921C7FE7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,8 +184,11 @@
 				4E86334819A0D13900E61585 /* YLPlayerListModel.m */,
 				4E86334919A0D13900E61585 /* YLShotsListModel.h */,
 				4E86334A19A0D13900E61585 /* YLShotsListModel.m */,
+				4E86335C19A0F7EB00E61585 /* Dribbble.xcdatamodeld */,
 				4E86331B199FA91D00E61585 /* Images.xcassets */,
 				4E86330A199FA91D00E61585 /* Supporting Files */,
+				4E86336019A0FCD900E61585 /* YLDribbbleCoreDataManager.h */,
+				4E86336119A0FCD900E61585 /* YLDribbbleCoreDataManager.m */,
 			);
 			path = testMantleAndMagicalRecord;
 			sourceTree = "<group>";
@@ -349,11 +359,13 @@
 				4E86331A199FA91D00E61585 /* ViewController.m in Sources */,
 				4E86335019A0D13900E61585 /* YLListModel.m in Sources */,
 				4E863314199FA91D00E61585 /* AppDelegate.m in Sources */,
+				4E86336219A0FCD900E61585 /* YLDribbbleCoreDataManager.m in Sources */,
 				4E86335119A0D13900E61585 /* YLPlayerListModel.m in Sources */,
 				4E86334D19A0D13900E61585 /* YLDribbbleList.m in Sources */,
 				4E86334E19A0D13900E61585 /* YLDribbbleShot.m in Sources */,
 				4E86334F19A0D13900E61585 /* YLDribbbleUser.m in Sources */,
 				4E86333A19A0D10400E61585 /* YLDribbbleEngine.m in Sources */,
+				4E86335E19A0F7EB00E61585 /* Dribbble.xcdatamodeld in Sources */,
 				4E863310199FA91D00E61585 /* main.m in Sources */,
 				4E86334B19A0D13900E61585 /* YLCommentsListModel.m in Sources */,
 			);
@@ -366,6 +378,7 @@
 				4E86335B19A0D15400E61585 /* YLShotsListModel.m in Sources */,
 				4E86335519A0D15400E61585 /* YLDribbbleComment.m in Sources */,
 				4E86335619A0D15400E61585 /* YLDribbbleList.m in Sources */,
+				4E86336319A0FCD900E61585 /* YLDribbbleCoreDataManager.m in Sources */,
 				4E86335919A0D15400E61585 /* YLListModel.m in Sources */,
 				4E86335319A0D15400E61585 /* YLDribbbleEngine.m in Sources */,
 				4E86332F199FA91D00E61585 /* testMantleAndMagicalRecordTests.m in Sources */,
@@ -373,6 +386,7 @@
 				4E86335419A0D15400E61585 /* YLCommentsListModel.m in Sources */,
 				4E86335819A0D15400E61585 /* YLDribbbleUser.m in Sources */,
 				4E86335A19A0D15400E61585 /* YLPlayerListModel.m in Sources */,
+				4E86335F19A0F7EB00E61585 /* Dribbble.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +597,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E86335C19A0F7EB00E61585 /* Dribbble.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E86335D19A0F7EB00E61585 /* Dribbble.xcdatamodel */,
+			);
+			currentVersion = 4E86335D19A0F7EB00E61585 /* Dribbble.xcdatamodel */;
+			path = Dribbble.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E8632F8199FA91D00E61585 /* Project object */;
 }

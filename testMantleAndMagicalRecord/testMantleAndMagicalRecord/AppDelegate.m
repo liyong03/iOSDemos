@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "YLDribbbleCoreDataManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[YLDribbbleCoreDataManager sharedManager] setUp];
+    
     return YES;
 }
 							

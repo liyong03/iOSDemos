@@ -56,6 +56,17 @@
     }];
 }
 
+#pragma mark - MTLManagedObjectSerializing
+
++ (NSString *)managedObjectEntityName {
+    return @"DribbbleShot";
+}
+
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return nil;
+}
+
 @end
 
 @implementation YLDribbbleUserList
