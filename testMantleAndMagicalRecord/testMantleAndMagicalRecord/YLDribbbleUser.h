@@ -11,7 +11,7 @@
 
 #import "YLDribbbleList.h"
 
-@interface YLDribbbleUser : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
+@interface YLDribbbleUser : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger userID;
 @property (nonatomic, copy) NSString* userName;

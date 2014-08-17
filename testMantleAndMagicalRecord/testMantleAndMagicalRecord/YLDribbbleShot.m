@@ -68,6 +68,45 @@
     }];
 }
 
+#pragma mark - MTLManagedObjectSerializing
+
++ (NSString *)managedObjectEntityName {
+    return @"DribbbleShot";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return @{
+             @"reboundSourceID" : [NSNull null],
+             @"player" : [NSNull null],
+             };
+}
+//
+//@property (nonatomic, strong) NSURL* url;
+//@property (nonatomic, strong) NSURL* shortURL;
+//@property (nonatomic, strong) NSURL* imageURL;
+//@property (nonatomic, strong) NSURL* imageTeaserURL;
+
++ (NSValueTransformer *)urlTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSString *(NSURL *url) {
+        return [url description];
+    } reverseBlock:^NSURL *(NSString *urlString) {
+        return [NSURL URLWithString:urlString];
+    }];
+}
+
++ (NSValueTransformer *)urlEntityAttributeTransformer {
+    return [self urlTransformer];
+}
++ (NSValueTransformer *)shortURLEntityAttributeTransformer {
+    return [self urlTransformer];
+}
++ (NSValueTransformer *)imageURLEntityAttributeTransformer {
+    return [self urlTransformer];
+}
++ (NSValueTransformer *)imageTeaserURLEntityAttributeTransformer {
+    return [self urlTransformer];
+}
+
 @end
 
 @implementation YLDribbbleShotList
