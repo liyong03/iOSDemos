@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E569D27199C9EEA0097E81E /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E569D26199C9EEA0097E81E /* CAAnimation+Blocks.m */; };
 		4E569D28199C9EEB0097E81E /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E569D26199C9EEA0097E81E /* CAAnimation+Blocks.m */; };
+		4E86336619A19F9600E61585 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86336519A19F9600E61585 /* PlayerView.m */; };
+		4E86336719A19F9600E61585 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86336519A19F9600E61585 /* PlayerView.m */; };
 		4EE8CC4B199B345100FCD190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8CC4A199B345100FCD190 /* Foundation.framework */; };
 		4EE8CC4D199B345200FCD190 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8CC4C199B345200FCD190 /* CoreGraphics.framework */; };
 		4EE8CC4F199B345200FCD190 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8CC4E199B345200FCD190 /* UIKit.framework */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		4E569D25199C9EEA0097E81E /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		4E569D26199C9EEA0097E81E /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		4E86336419A19F9600E61585 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		4E86336519A19F9600E61585 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		4EE8CC47199B345100FCD190 /* testImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE8CC4A199B345100FCD190 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4EE8CC4C199B345200FCD190 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +137,8 @@
 				4EE8CC60199B345200FCD190 /* ViewController.m */,
 				4EE8CC62199B345200FCD190 /* Images.xcassets */,
 				4EE8CC51199B345200FCD190 /* Supporting Files */,
+				4E86336419A19F9600E61585 /* PlayerView.h */,
+				4E86336519A19F9600E61585 /* PlayerView.m */,
 			);
 			path = testImagePicker;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				4EE8CC61199B345200FCD190 /* ViewController.m in Sources */,
 				4EE8CC5B199B345200FCD190 /* AppDelegate.m in Sources */,
 				4EE8CC57199B345200FCD190 /* main.m in Sources */,
+				4E86336619A19F9600E61585 /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E569D28199C9EEB0097E81E /* CAAnimation+Blocks.m in Sources */,
+				4E86336719A19F9600E61585 /* PlayerView.m in Sources */,
 				4EE8CC76199B345200FCD190 /* testImagePickerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

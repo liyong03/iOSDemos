@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
 #import "CAAnimation+Blocks.h"
+#import "PlayerView.h"
 
 @interface YLCameraAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 @property (nonatomic, assign) BOOL isForward;
@@ -74,6 +75,7 @@
 @implementation ViewController {
     AVCaptureSession *captureSession;
     YLCameraAnimation* _animator;
+    PlayerView  *_playerView;
 }
 
 - (void)viewDidLoad
@@ -144,10 +146,10 @@
     
     UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePicker.mediaTypes = @[((__bridge NSString*)kUTTypeImage),((__bridge NSString*)kUTTypeMovie)];
-    imagePicker.allowsEditing = YES;
-    imagePicker.videoMaximumDuration = 60;
+//    imagePicker.allowsEditing = YES;
+//    imagePicker.videoMaximumDuration = 60;
     //imagePicker.transitioningDelegate = self;
     
 //    CATransition *transition = [CATransition animation];
@@ -180,6 +182,14 @@
 #pragma mark - ImagePickerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    NSURL* url = info[UIImagePickerControllerMediaURL];
+    if (_playerView) {
+        [_playerView removeFromSuperview];
+    }
+    _playerView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 20, 320, 240)];
+    [self.view addSubview:_playerView];
+    [_playerView playURL:url];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
