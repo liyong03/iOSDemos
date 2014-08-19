@@ -80,11 +80,10 @@
              @"player" : [NSNull null],
              };
 }
-//
-//@property (nonatomic, strong) NSURL* url;
-//@property (nonatomic, strong) NSURL* shortURL;
-//@property (nonatomic, strong) NSURL* imageURL;
-//@property (nonatomic, strong) NSURL* imageTeaserURL;
+
++ (NSSet *)propertyKeysForManagedObjectUniquing {
+    return [NSSet setWithObject:@"shotID"];
+}
 
 + (NSValueTransformer *)urlTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSString *(NSURL *url) {
