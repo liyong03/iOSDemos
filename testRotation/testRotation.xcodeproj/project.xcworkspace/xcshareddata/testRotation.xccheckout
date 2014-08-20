@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1024CFAE-5BD4-49A3-8732-5FF32333CDD8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>testRotation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B02608C9-E8E5-480A-A2F7-A1D5B54C0575</key>
+		<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>testRotation/testRotation.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B02608C9-E8E5-480A-A2F7-A1D5B54C0575</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/liyong03/iOSDemos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B02608C9-E8E5-480A-A2F7-A1D5B54C0575</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B02608C9-E8E5-480A-A2F7-A1D5B54C0575</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSDemos</string>
+		</dict>
+	</array>
+</dict>
+</plist>
