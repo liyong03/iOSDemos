@@ -46,27 +46,28 @@
                 
                 NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"DribbbleShot"];
                 //fetchRequest.predicate = [NSPredicate predicateWithFormat:@"postID != nil"];
-                //fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"postID" ascending:NO]];
+                fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"shotID" ascending:NO]];
                 NSError* error;
                 NSArray *cachedPosts = [context executeFetchRequest:fetchRequest error:&error];
                 if (!error) {
                     for (NSManagedObject *mob in [cachedPosts reverseObjectEnumerator]) {
                         YLDribbbleShot *shot = [MTLManagedObjectAdapter modelOfClass:[YLDribbbleShot class] fromManagedObject:mob error:&error];
-                        NSLog(@"loaded shot: %@", shot);
+                        NSLog(@"loaded shot: %d", shot.shotID);
+                        NSLog(@"%@", shot.createDate);
                         [context deleteObject:mob];
                     }
                 }
                 else {
                     NSLog(@"Fetch Error: %@", error);
                 }
-                
+                NSLog(@"============");
                 for (YLDribbbleShot* shot in list.shots) {
                     NSError *insertError;
+                    NSLog(@"save %d", shot.shotID);
                     NSManagedObject *mob = [MTLManagedObjectAdapter managedObjectFromModel:shot
                                                                       insertingIntoContext:context
                                                                                      error:&insertError];
                     if (mob) {
-                        NSLog(@"Mob: %@", mob);
                     } else {
                         NSLog(@"ERROR: %@", insertError);
                     }
