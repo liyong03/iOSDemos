@@ -77,12 +77,17 @@
 + (NSDictionary *)managedObjectKeysByPropertyKey {
     return @{
              @"reboundSourceID" : [NSNull null],
-             @"player" : [NSNull null],
              };
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing {
     return [NSSet setWithObject:@"shotID"];
+}
+
++ (NSDictionary *)relationshipModelClassesByPropertyKey {
+    return @{
+             @"player" : YLDribbbleUser.class
+             };
 }
 
 + (NSValueTransformer *)urlTransformer {
