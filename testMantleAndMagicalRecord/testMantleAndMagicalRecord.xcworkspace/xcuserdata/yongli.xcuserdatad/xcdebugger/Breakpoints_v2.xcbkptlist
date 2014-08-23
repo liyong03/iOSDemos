@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testMantleAndMagicalRecord/ViewController.m"
-            timestampString = "430327086.291214"
+            timestampString = "430487474.512525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-downloadPopular:"
             landmarkType = "5">
          </BreakpointContent>

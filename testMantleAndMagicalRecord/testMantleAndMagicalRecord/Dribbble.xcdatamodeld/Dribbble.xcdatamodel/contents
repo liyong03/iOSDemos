@@ -16,6 +16,10 @@
         <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DribbbleUser" syncable="YES"/>
     </entity>
+    <entity name="DribbbleShotList" syncable="YES">
+        <attribute name="listName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="shots" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DribbbleShot" syncable="YES"/>
+    </entity>
     <entity name="DribbbleUser" syncable="YES">
         <attribute name="avatarURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -37,7 +41,8 @@
         <attribute name="websiteURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DribbbleShot" positionX="-407" positionY="18" width="128" height="253"/>
+        <element name="DribbbleShot" positionX="-407" positionY="18" width="128" height="255"/>
         <element name="DribbbleUser" positionX="-63" positionY="81" width="128" height="315"/>
+        <element name="DribbbleShotList" positionX="-234" positionY="171" width="128" height="75"/>
     </elements>
 </model>

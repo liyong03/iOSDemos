@@ -126,5 +126,13 @@
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:YLDribbbleShot.class];
 }
 
+#pragma mark - MTLManagedObjectSerializing
+
++ (NSDictionary *)relationshipModelClassesByPropertyKey {
+    NSDictionary* relations = [super relationshipModelClassesByPropertyKey];
+    NSMutableDictionary* result = [NSMutableDictionary dictionaryWithDictionary:relations];
+    [result setObject:YLDribbbleShot.class forKey:@"shots"];
+    return result;
+}
 
 @end
