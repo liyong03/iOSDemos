@@ -95,10 +95,6 @@ class Product {
     }
 }
 
-var p = Product(name: "PS4", price: 399)
-let ss = p.saleStatus
-
-
 /**
 
 R5 – Create an array called “products” with 5 product objects. Their names are
