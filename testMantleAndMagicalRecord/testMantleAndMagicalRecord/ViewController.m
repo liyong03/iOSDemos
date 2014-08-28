@@ -53,7 +53,7 @@
                     for (NSManagedObject *mob in [cachedPosts reverseObjectEnumerator]) {
                         YLDribbbleShotList *shotList = [MTLManagedObjectAdapter modelOfClass:[YLDribbbleShotList class] fromManagedObject:mob error:&error];
                         NSLog(@"loaded shot: %@", shotList);
-                        [context deleteObject:mob];
+                        //[context deleteObject:mob];
                     }
                 }
                 else {
