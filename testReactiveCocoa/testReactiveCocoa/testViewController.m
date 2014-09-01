@@ -25,6 +25,9 @@
 @implementation testViewController {
     NSURLSessionDownloadTask* _downloadTask;
     NSData* _resumeData;
+    
+    RACSignal *_countSignal;
+    int _countBase;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -63,19 +66,19 @@
         _progressView.progress = number.floatValue;
     }];
     
-    @weakify(self);
-    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
-      deliverOn:[RACScheduler mainThreadScheduler]]
-     subscribeNext:^(UIImage* image) {
-         @strongify(self);
-         self.imageView.image = image;
-     }
-     error:^(NSError *error) {
-         NSLog(@"error : %@", error);
-     }];
+//    @weakify(self);
+//    [[[self downloadImageWithURL:[NSURL URLWithString:@"http://d13yacurqjgara.cloudfront.net/users/306293/screenshots/1475496/___-1.jpg"]]
+//      deliverOn:[RACScheduler mainThreadScheduler]]
+//     subscribeNext:^(UIImage* image) {
+//         @strongify(self);
+//         self.imageView.image = image;
+//     }
+//     error:^(NSError *error) {
+//         NSLog(@"error : %@", error);
+//     }];
     
     //[self testMerge];
-    [self testConcat];
+    //[self testConcat];
     
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 400, 320, 40);
@@ -99,9 +102,23 @@
     [btn3 setTitle:@"Test switch to latest" forState:UIControlStateNormal];
     [btn3 setTintColor:[UIColor redColor]];
     [btn3 setBackgroundColor:[UIColor greenColor]];
-    [btn3 addTarget:self action:@selector(testSwitchToLatest) forControlEvents:UIControlEventTouchUpInside];
+    [btn3 addTarget:self action:@selector(testDelay) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn3];
     
+    _countBase = 0;
+    _countSignal = [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        int base = _countBase;
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            for (int i = 0; i < 100; i++) {
+                [NSThread sleepForTimeInterval:0.15];
+                NSLog(@"========== in signal : %d", i);
+                [subscriber sendNext:@(i+base)];
+            }
+            [subscriber sendCompleted];
+        });
+        
+        return nil;
+    }] publish] autoconnect];
 }
 
 - (void)testSwitchToLatest {
@@ -315,6 +332,24 @@
 //    [[signal concat] subscribeNext:^(NSNumber* x) {
 //        NSLog(@">>> %@", x);
 //    }];
+}
+
+// test delay
+
+- (void) testDelay {
+    static int suber = 0;
+    int v = suber;
+    suber ++;
+    _countBase += 100;
+    [_countSignal subscribeNext:^(id x) {
+        NSLog(@">>>>>>>>>>> sub: %d, %@", v, x);
+    }];
+    v = suber;
+    suber ++;
+    _countBase += 100;
+    [_countSignal subscribeNext:^(id x) {
+        NSLog(@">>>>>>>>>>> sub: %d, %@", v, x);
+    }];
 }
 
 @end
