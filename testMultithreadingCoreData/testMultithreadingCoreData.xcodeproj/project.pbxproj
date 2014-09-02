@@ -24,6 +24,10 @@
 		DF929EF419B6076C00DA1154 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF929EF319B6076C00DA1154 /* CoreData.framework */; };
 		DF929EF719B6079B00DA1154 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DF929EF619B6079B00DA1154 /* Store.m */; };
 		DF929EF819B6079B00DA1154 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DF929EF619B6079B00DA1154 /* Store.m */; };
+		DF929EFB19B6087C00DA1154 /* MyObject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF929EF919B6087C00DA1154 /* MyObject.xcdatamodeld */; };
+		DF929EFC19B6087C00DA1154 /* MyObject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF929EF919B6087C00DA1154 /* MyObject.xcdatamodeld */; };
+		DF929EFF19B608C300DA1154 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DF929EFE19B608C300DA1154 /* MyObject.m */; };
+		DF929F0019B608C300DA1154 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DF929EFE19B608C300DA1154 /* MyObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,9 @@
 		DF929EF319B6076C00DA1154 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DF929EF519B6079B00DA1154 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		DF929EF619B6079B00DA1154 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		DF929EFA19B6087C00DA1154 /* MyObject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyObject.xcdatamodel; sourceTree = "<group>"; };
+		DF929EFD19B608C300DA1154 /* MyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
+		DF929EFE19B608C300DA1154 /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,9 @@
 				DF929E4619B6064900DA1154 /* YLViewController.m */,
 				DF929EF519B6079B00DA1154 /* Store.h */,
 				DF929EF619B6079B00DA1154 /* Store.m */,
+				DF929EF919B6087C00DA1154 /* MyObject.xcdatamodeld */,
+				DF929EFD19B608C300DA1154 /* MyObject.h */,
+				DF929EFE19B608C300DA1154 /* MyObject.m */,
 				DF929E4819B6064900DA1154 /* Images.xcassets */,
 				DF929E3719B6064900DA1154 /* Supporting Files */,
 			);
@@ -262,8 +272,10 @@
 			files = (
 				DF929E3D19B6064900DA1154 /* main.m in Sources */,
 				DF929E4719B6064900DA1154 /* YLViewController.m in Sources */,
+				DF929EFF19B608C300DA1154 /* MyObject.m in Sources */,
 				DF929E4119B6064900DA1154 /* YLAppDelegate.m in Sources */,
 				DF929EF719B6079B00DA1154 /* Store.m in Sources */,
+				DF929EFB19B6087C00DA1154 /* MyObject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF929E5C19B6064900DA1154 /* testMultithreadingCoreDataTests.m in Sources */,
+				DF929EFC19B6087C00DA1154 /* MyObject.xcdatamodeld in Sources */,
+				DF929F0019B608C300DA1154 /* MyObject.m in Sources */,
 				DF929EF819B6079B00DA1154 /* Store.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +493,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF929EF919B6087C00DA1154 /* MyObject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF929EFA19B6087C00DA1154 /* MyObject.xcdatamodel */,
+			);
+			currentVersion = DF929EFA19B6087C00DA1154 /* MyObject.xcdatamodel */;
+			path = MyObject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF929E2519B6064900DA1154 /* Project object */;
 }

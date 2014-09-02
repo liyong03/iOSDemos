@@ -7,12 +7,19 @@
 //
 
 #import "YLAppDelegate.h"
+#import "Store.h"
+
+@interface YLAppDelegate ()
+@property (nonatomic, strong) Store* store;
+@end
 
 @implementation YLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.store = [[Store alloc] init];
+    NSLog(@"%@", self.store.mainManagedObjectContext);
     return YES;
 }
 							
