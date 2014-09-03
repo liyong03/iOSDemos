@@ -10,10 +10,13 @@
 #import "Store.h"
 
 @interface YLAppDelegate ()
-@property (nonatomic, strong) Store* store;
 @end
 
 @implementation YLAppDelegate
+
++ (YLAppDelegate*)appDelegate {
+    return [UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

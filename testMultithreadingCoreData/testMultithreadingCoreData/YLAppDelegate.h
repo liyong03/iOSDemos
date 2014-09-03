@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Store;
 @interface YLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) Store* store;
+
++ (YLAppDelegate*)appDelegate;
 
 @end

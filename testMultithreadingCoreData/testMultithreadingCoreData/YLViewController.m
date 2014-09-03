@@ -7,12 +7,18 @@
 //
 
 #import "YLViewController.h"
+#import "YLAppDelegate.h"
+#import "Store.h"
+#import "MyObject.h"
+#import <CoreData/CoreData.h>
 
 @interface YLViewController ()
 
 @end
 
-@implementation YLViewController
+@implementation YLViewController {
+    MyObject *_mainObject;
+}
 
 - (void)viewDidLoad
 {
@@ -24,6 +30,39 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)createOrLoad:(id)sender {
+    NSManagedObjectContext* context = [YLAppDelegate appDelegate].store.mainManagedObjectContext;
+    
+    NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"MyObject"];
+    fetchRequest.fetchLimit = 1;
+    _mainObject = [[context executeFetchRequest:fetchRequest error:NULL] lastObject];
+    if(_mainObject == nil) {
+        _mainObject = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
+    }
+    
+    _mainObject.name = @"main";
+    _mainObject.value = @(100);
+    
+    [[YLAppDelegate appDelegate].store saveContext];
+}
+
+
+- (IBAction)loadAndChangeInBackgroundThread:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSManagedObjectContext* bgContext = [[YLAppDelegate appDelegate].store newPrivateContext];
+        NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"MyObject"];
+        fetchRequest.fetchLimit = 1;
+        MyObject* bgObject = [[bgContext executeFetchRequest:fetchRequest error:NULL] lastObject];
+        NSLog(@"bgObject = %@", bgObject);
+        NSLog(@"name = %@", bgObject.name);
+        NSLog(@"val = %@", bgObject.value);
+        
+        bgObject.value = @(10);
+        [bgContext save:NULL];
+    });
 }
 
 @end

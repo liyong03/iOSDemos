@@ -10,4 +10,7 @@
 
 @interface YLViewController : UIViewController
 
+- (IBAction)createOrLoad:(id)sender;
+- (IBAction)loadAndChangeInBackgroundThread:(id)sender;
+
 @end
