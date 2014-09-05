@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface YLViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 
 - (IBAction)createOrLoad:(id)sender;
 - (IBAction)loadAndChangeInBackgroundThread:(id)sender;

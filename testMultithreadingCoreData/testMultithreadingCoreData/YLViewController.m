@@ -11,6 +11,7 @@
 #import "Store.h"
 #import "MyObject.h"
 #import <CoreData/CoreData.h>
+#import <ReactiveCocoa.h>
 
 @interface YLViewController ()
 
@@ -32,6 +33,7 @@
                                                   usingBlock:^(NSNotification* note) {
                                                       NSLog(@"notify = %@", note);
                                                   }];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +51,10 @@
     if(_mainObject == nil) {
         _mainObject = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
     }
+    
+    [RACObserve(_mainObject, value) subscribeNext:^(id x) {
+        self.numberLabel.text = [NSString stringWithFormat:@"%@", x];
+    }];
     
     _mainObject.name = @"main";
     _mainObject.value = @(100);
