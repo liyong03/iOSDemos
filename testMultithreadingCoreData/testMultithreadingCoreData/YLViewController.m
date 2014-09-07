@@ -34,6 +34,14 @@
                                                       NSLog(@"notify = %@", note);
                                                   }];
     
+    NSManagedObjectContext* context = [YLAppDelegate appDelegate].store.mainManagedObjectContext;
+    NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"MyObject"];
+    fetchRequest.fetchLimit = 1;
+    _mainObject = [[context executeFetchRequest:fetchRequest error:NULL] lastObject];
+    
+    RAC(self.numberLabel, text) = [RACObserve(_mainObject, value) map:^id(id value) {
+        return [NSString stringWithFormat:@"%@", value];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,11 +58,12 @@
     _mainObject = [[context executeFetchRequest:fetchRequest error:NULL] lastObject];
     if(_mainObject == nil) {
         _mainObject = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
+        
+        RAC(self.numberLabel, text) = [RACObserve(_mainObject, value) map:^id(id value) {
+            return [NSString stringWithFormat:@"%@", value];
+        }];
     }
     
-    [RACObserve(_mainObject, value) subscribeNext:^(id x) {
-        self.numberLabel.text = [NSString stringWithFormat:@"%@", x];
-    }];
     
     _mainObject.name = @"main";
     _mainObject.value = @(100);
