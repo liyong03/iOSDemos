@@ -3,8 +3,9 @@
     <entity name="MyObject" representedClassName="MyObject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="subObjs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyObject" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MyObject" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="MyObject" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
