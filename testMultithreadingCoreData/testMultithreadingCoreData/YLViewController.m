@@ -39,7 +39,7 @@
     fetchRequest.fetchLimit = 1;
     _mainObject = [[context executeFetchRequest:fetchRequest error:NULL] lastObject];
     
-    RAC(self.numberLabel, text) = [RACObserve(_mainObject, value) map:^id(id value) {
+    RAC(self.numberLabel, text) = [RACObserve(_mainObject.subObjs, value) map:^id(id value) {
         return [NSString stringWithFormat:@"%@", value];
     }];
 }
@@ -59,7 +59,12 @@
     if(_mainObject == nil) {
         _mainObject = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
         
-        RAC(self.numberLabel, text) = [RACObserve(_mainObject, value) map:^id(id value) {
+        MyObject *subObj = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
+        subObj.name = @"sub";
+        subObj.value = @(200);
+        _mainObject.subObjs = subObj;
+        
+        RAC(self.numberLabel, text) = [RACObserve(_mainObject.subObjs, value) map:^id(id value) {
             return [NSString stringWithFormat:@"%@", value];
         }];
     }
@@ -67,6 +72,7 @@
     
     _mainObject.name = @"main";
     _mainObject.value = @(100);
+    _mainObject.subObjs.value = @(200);
     
     [[YLAppDelegate appDelegate].store saveContext];
 }
@@ -83,7 +89,7 @@
         NSLog(@"name = %@", bgObject.name);
         NSLog(@"val = %@", bgObject.value);
         
-        bgObject.value = @(10);
+        bgObject.subObjs.value = @(10);
         [bgContext save:NULL];
     });
 }
