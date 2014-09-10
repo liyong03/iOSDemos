@@ -22,7 +22,7 @@
 {
     // Override point for customization after application launch.
     self.store = [[Store alloc] init];
-    NSLog(@"%@", self.store.mainManagedObjectContext);
+    //NSLog(@"%@", self.store.mainManagedObjectContext);
     return YES;
 }
 							
