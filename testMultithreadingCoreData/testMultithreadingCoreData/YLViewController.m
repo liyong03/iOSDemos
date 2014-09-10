@@ -89,7 +89,7 @@
         NSLog(@"name = %@", bgObject.name);
         NSLog(@"val = %@", bgObject.value);
         
-        bgObject.subObjs.value = @(10);
+        bgObject.subObjs.value = @(20);
         [bgContext save:NULL];
     });
 }
