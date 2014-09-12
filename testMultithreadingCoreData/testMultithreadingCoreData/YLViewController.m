@@ -57,9 +57,9 @@
     fetchRequest.fetchLimit = 1;
     _mainObject = [[context executeFetchRequest:fetchRequest error:NULL] lastObject];
     if(_mainObject == nil) {
-        _mainObject = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
+        _mainObject = [MyObject MR_createInContext:context];//[NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
         
-        MyObject *subObj = [NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
+        MyObject *subObj = [MyObject MR_createInContext:context];//[NSEntityDescription insertNewObjectForEntityForName:@"MyObject" inManagedObjectContext:context];
         subObj.name = @"sub";
         subObj.value = @(200);
         _mainObject.subObjs = subObj;
