@@ -22,12 +22,13 @@ class ViewController: UIViewController {
             if dev.hasMediaType(AVMediaTypeVideo) && dev.position == AVCaptureDevicePosition.Back {
                 
                 var error:NSError?
-                let input = AVCaptureDeviceInput.deviceInputWithDevice(dev as AVCaptureDevice, error: &error) as AVCaptureInput
+                let input = AVCaptureDeviceInput.deviceInputWithDevice(dev as AVCaptureDevice, error: &error) as AVCaptureDeviceInput
                 self.avsession.addInput(input)
                 
                 let previewLayer = AVCaptureVideoPreviewLayer(session: self.avsession)
                 previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
                 self.view.layer.addSublayer(previewLayer)
+                previewLayer.frame = self.view.layer.frame
                 
                 self.avsession.startRunning()
                 
