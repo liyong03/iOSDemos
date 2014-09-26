@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF40D1BD19D5B96100858C65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF40D1BC19D5B96100858C65 /* AVFoundation.framework */; };
 		DFAEC4F019D46F9C001EF671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAEC4EF19D46F9C001EF671 /* AppDelegate.swift */; };
 		DFAEC4F219D46F9C001EF671 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAEC4F119D46F9C001EF671 /* ViewController.swift */; };
 		DFAEC4F519D46F9C001EF671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFAEC4F319D46F9C001EF671 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF40D1BC19D5B96100858C65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DFAEC4EA19D46F9C001EF671 /* testiOS8Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testiOS8Camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAEC4EE19D46F9C001EF671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFAEC4EF19D46F9C001EF671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF40D1BD19D5B96100858C65 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		DFAEC4E119D46F9C001EF671 = {
 			isa = PBXGroup;
 			children = (
+				DF40D1BC19D5B96100858C65 /* AVFoundation.framework */,
 				DFAEC4EC19D46F9C001EF671 /* testiOS8Camera */,
 				DFAEC50219D46F9C001EF671 /* testiOS8CameraTests */,
 				DFAEC4EB19D46F9C001EF671 /* Products */,
@@ -407,6 +411,7 @@
 				DFAEC50B19D46F9C001EF671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFAEC50C19D46F9C001EF671 /* Build configuration list for PBXNativeTarget "testiOS8CameraTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				DFAEC50E19D46F9C001EF671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
