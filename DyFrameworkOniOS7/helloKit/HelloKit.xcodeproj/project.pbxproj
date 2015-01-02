@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFEBE1C61A52864D0052D879 /* HelloKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DFEBE1C51A52864D0052D879 /* HelloKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFEBE1CC1A52864D0052D879 /* HelloKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEBE1C01A52864D0052D879 /* HelloKit.framework */; };
+		DFEBE1D31A52864D0052D879 /* HelloKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEBE1D21A52864D0052D879 /* HelloKitTests.m */; };
+		DFEBE1DD1A5286AB0052D879 /* HelloKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEBE1DC1A5286AB0052D879 /* HelloKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFEBE1CD1A52864D0052D879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFEBE1B71A52864D0052D879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFEBE1BF1A52864D0052D879;
+			remoteInfo = HelloKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DFEBE1C01A52864D0052D879 /* HelloKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HelloKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEBE1C41A52864D0052D879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEBE1C51A52864D0052D879 /* HelloKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloKit.h; sourceTree = "<group>"; };
+		DFEBE1CB1A52864D0052D879 /* HelloKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEBE1D11A52864D0052D879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEBE1D21A52864D0052D879 /* HelloKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloKitTests.m; sourceTree = "<group>"; };
+		DFEBE1DC1A5286AB0052D879 /* HelloKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloKit.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFEBE1BC1A52864D0052D879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEBE1C81A52864D0052D879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEBE1CC1A52864D0052D879 /* HelloKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFEBE1B61A52864D0052D879 = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1C21A52864D0052D879 /* HelloKit */,
+				DFEBE1CF1A52864D0052D879 /* HelloKitTests */,
+				DFEBE1C11A52864D0052D879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFEBE1C11A52864D0052D879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1C01A52864D0052D879 /* HelloKit.framework */,
+				DFEBE1CB1A52864D0052D879 /* HelloKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFEBE1C21A52864D0052D879 /* HelloKit */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1C51A52864D0052D879 /* HelloKit.h */,
+				DFEBE1C31A52864D0052D879 /* Supporting Files */,
+				DFEBE1DC1A5286AB0052D879 /* HelloKit.m */,
+			);
+			path = HelloKit;
+			sourceTree = "<group>";
+		};
+		DFEBE1C31A52864D0052D879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1C41A52864D0052D879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFEBE1CF1A52864D0052D879 /* HelloKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1D21A52864D0052D879 /* HelloKitTests.m */,
+				DFEBE1D01A52864D0052D879 /* Supporting Files */,
+			);
+			path = HelloKitTests;
+			sourceTree = "<group>";
+		};
+		DFEBE1D01A52864D0052D879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFEBE1D11A52864D0052D879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DFEBE1BD1A52864D0052D879 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEBE1C61A52864D0052D879 /* HelloKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DFEBE1BF1A52864D0052D879 /* HelloKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFEBE1D61A52864D0052D879 /* Build configuration list for PBXNativeTarget "HelloKit" */;
+			buildPhases = (
+				DFEBE1BB1A52864D0052D879 /* Sources */,
+				DFEBE1BC1A52864D0052D879 /* Frameworks */,
+				DFEBE1BD1A52864D0052D879 /* Headers */,
+				DFEBE1BE1A52864D0052D879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloKit;
+			productName = HelloKit;
+			productReference = DFEBE1C01A52864D0052D879 /* HelloKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DFEBE1CA1A52864D0052D879 /* HelloKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFEBE1D91A52864D0052D879 /* Build configuration list for PBXNativeTarget "HelloKitTests" */;
+			buildPhases = (
+				DFEBE1C71A52864D0052D879 /* Sources */,
+				DFEBE1C81A52864D0052D879 /* Frameworks */,
+				DFEBE1C91A52864D0052D879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFEBE1CE1A52864D0052D879 /* PBXTargetDependency */,
+			);
+			name = HelloKitTests;
+			productName = HelloKitTests;
+			productReference = DFEBE1CB1A52864D0052D879 /* HelloKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFEBE1B71A52864D0052D879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Yong Li";
+				TargetAttributes = {
+					DFEBE1BF1A52864D0052D879 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DFEBE1CA1A52864D0052D879 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = DFEBE1BA1A52864D0052D879 /* Build configuration list for PBXProject "HelloKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DFEBE1B61A52864D0052D879;
+			productRefGroup = DFEBE1C11A52864D0052D879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFEBE1BF1A52864D0052D879 /* HelloKit */,
+				DFEBE1CA1A52864D0052D879 /* HelloKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFEBE1BE1A52864D0052D879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEBE1C91A52864D0052D879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFEBE1BB1A52864D0052D879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEBE1DD1A5286AB0052D879 /* HelloKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEBE1C71A52864D0052D879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEBE1D31A52864D0052D879 /* HelloKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFEBE1CE1A52864D0052D879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFEBE1BF1A52864D0052D879 /* HelloKit */;
+			targetProxy = DFEBE1CD1A52864D0052D879 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DFEBE1D41A52864D0052D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFEBE1D51A52864D0052D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DFEBE1D71A52864D0052D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HelloKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DFEBE1D81A52864D0052D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HelloKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DFEBE1DA1A52864D0052D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HelloKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DFEBE1DB1A52864D0052D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HelloKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFEBE1BA1A52864D0052D879 /* Build configuration list for PBXProject "HelloKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEBE1D41A52864D0052D879 /* Debug */,
+				DFEBE1D51A52864D0052D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFEBE1D61A52864D0052D879 /* Build configuration list for PBXNativeTarget "HelloKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEBE1D71A52864D0052D879 /* Debug */,
+				DFEBE1D81A52864D0052D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFEBE1D91A52864D0052D879 /* Build configuration list for PBXNativeTarget "HelloKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEBE1DA1A52864D0052D879 /* Debug */,
+				DFEBE1DB1A52864D0052D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFEBE1B71A52864D0052D879 /* Project object */;
+}
